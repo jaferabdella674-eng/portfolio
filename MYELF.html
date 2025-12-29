@@ -1,0 +1,198 @@
+MYSELF.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    /* Header */
+    header {
+        background-color: #3498db;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #2ecc71;
+        color: white;
+    }
+
+    .hero img {
+        width: 100px;
+        border-radius: 50%;
+        margin-top: 20px;
+        transition: transform 0.3s;
+    }
+
+    .hero img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Sections */
+    section {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    /* Portfolio Gallery */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .gallery img {
+        width: 100px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Contact Form */
+    form {
+        max-width: 200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 18px;
+        background-color: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #d35400;
+    }
+
+    #userMessages {
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 8px;
+        color: #2c3e50;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #34495e;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 200px) {
+        .gallery {
+            flex-direction: column;
+            align-items:pgn center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Aamir </h1>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero" id="hero">
+    <h2>Welcome to My Portfolio Website</h2>
+    <p>I am a Web Developer & Designer</p>
+    <img src="https://via.jaferabdella674@gmail.com.com/100/3498db/ffffff" alt="Profile Image">
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p style="max-width: 200px; margin:auto; text-align:center;">
+        Hello! I am Jafer Abdella, passionate about web development. I create interactive and responsive websites using HTML, CSS, and JavaScript.
+    </p>
+</section>
+
+<section id="portfolio">
+    <h2>My Portfolio</h2>
+    <div class="gallery">
+        <img src="https://via.jaferabdella674@gmail.com.com/200/3498db/ffffff" alt="Project 1">
+        <img src="https://via.jaferabdella674@mail.com.com/200/e74c3c/ffffff" alt="Project 2">
+        <img src="https://via.jaferabdella674@mail.com/200/2ecc71/ffffff" alt="Project 3">
+        <img src="https://via.jaferabdell674@gmail.com/200/f1c40f/ffffff" alt="Project 4">
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="Baga nagayaan dhuftan"></div>
+</section>
+
+<footer>
+    © 2025 Jafer Abdella website All right reserved 
+</footer>
+
+<script>
+    // Form submission
+    const form = document.getElementById('userForm');
+    const userMessages = document.getElementById('userMessages');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+
+        if(name && message){
+            const newMessage = document.createElement('p');
+            newMessage.innerHTML = `<strong>${name}:</strong> ${message}`;
+            userMessages.appendChild(newMessage);
