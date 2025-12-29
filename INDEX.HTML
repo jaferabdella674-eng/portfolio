@@ -1,63 +1,187 @@
-index.html
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>HTML CSS JS Practice</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jafer Portfolio</title>
 
-  <!-- CSS -->
   <style>
     body {
-      font-family: Arial;
-      background-color: #f2f2f2;
-      padding: 20px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
     }
 
-    /* BOX (DIV) */
-    .box {
-      width: 300px;
-      padding: 30px;
-      background-color: white;
-      border: 2px solid blue;
-      margin-bottom: 30px;
-    }
-
-    /* BUTTON */
-    button {
-      background-color: blue;
+    /* HEADER */
+    header {
+      background: #0d6efd;
       color: white;
-      padding: 20px 30px;
-      border: none;
-      cursor: pointer;
-      font-size: 24px;
+      padding: 40px 20px;
+      text-align: center;
+      transition: background 0.3s;
     }
 
-    /* HOVER EFFECT */
+    header:hover {
+      background: #0b5ed7;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+
+    /* NAV */
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #555;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 300px;
+      max-width: 400px;
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      background: #e0f7ff;
+    }
+
+    .box h2 {
+      margin-top: 0;
+    }
+
+    button {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
     button:hover {
-      background-color: green;
+      background: #198754;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Jira Jirtuu Jafer,WELCOME TO WORLD 👋</h1>
+  <!-- HEADER -->
+  <header>
+    <h1>Jafer Abdella</h1>
+    <p>Web Developer Beginner Portfolio</p>
+  </header>
 
-  <!-- BOX -->
-  <div class="box">
-    <p>Kuni BOX (div) practice ti</p>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- ABOUT -->
+    <div class="box" id="about">
+      <h2>About Me</h2>
+      <p>Ani HTML, CSS, fi JavaScript barachaa jira. Web developer ta’uu barbaada.</p>
+      <button onclick="toggleAbout()">Show/Hide More</button>
+      <p id="moreAbout" style="display:none;">Portfolio kana keessatti projects koo fi skills koo argachuu dandeessa.</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="box" id="projects">
+      <h2>My Projects</h2>
+      <p>HTML & CSS Project</p>
+      <p>JavaScript Interactive Project</p>
+      <button onclick="showProjectAlert()">View More</button>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="box" id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: jafer@example.com</p>
+      <p>Phone: +251 912 345 678</p>
+      <button onclick="alert('Thanks for contacting me!')">Send Message</button>
+    </div>
+
   </div>
 
-  <!-- BUTTON -->
-  <button onclick="message()">Click Me</button>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Jafer Abdella Portfolio</p>
+  </footer>
 
   <!-- JAVASCRIPT -->
   <script>
-    function message() {
-      alert("Button cuqaaste! JavaScript hojjetaa jira 👍");
+    function toggleAbout() {
+      const x = document.getElementById("moreAbout");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function showProjectAlert() {
+      alert("Projects page coming soon! 🚀");
     }
   </script>
 
 </body>
 </html>
-
+  
