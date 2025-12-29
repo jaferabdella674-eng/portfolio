@@ -1,0 +1,139 @@
+indesx.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jafer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Jafer Abdella</h1>
+    <nav>
+      <a href="#about">About</a> |
+      <a href="#projects">Projects</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am learning HTML, CSS, and JavaScript. I want to become a web developer.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-card">
+      <h3>HTML & CSS Page</h3>
+      <p>Simple webpage project using HTML and CSS.</p>
+      <button onclick="alert('You clicked Project 1!')">Click Me</button>
+    </div>
+
+    <div class="project-card">
+      <h3>JavaScript Interactive</h3>
+      <p>Small interactive project using JavaScript button click event.</p>
+      <button onclick="alert('You clicked Project 2!')">Click Me</button>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: jaferabdella674@gmail.com</p>
+    <p>Phone: +252 6372 19 188</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Jafer Abdella</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+}
+
+header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+section {
+  padding: 50px;
+}
+
+.project-card {
+  display: inline-block;
+  width: 250px;
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+// Simple JavaScript example
+console.log("Welcome to Jafer's Portfolio!");
+
+// You can add more JS interactivity here later
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="project-card">
+    <img src="project1.png" alt="Project 1" width="250">
+    <h3>HTML & CSS Page</h3>
+    <p id="info1" style="display:none;">This project shows my HTML and CSS skills with a simple webpage layout.</p>
+    <button onclick="showInfo('info1')">Show Info</button>
+  </div>
+
+  <div class="project-card">
+    <img src="project2.png" alt="Project 2" width="250">
+    <h3>JavaScript Interactive</h3>
+    <p id="info2" style="display:none;">This project demonstrates JavaScript interactivity with button clicks.</p>
+    <button onclick="showInfo('info2')">Show Info</button>
+  </div>
+</section>
+function showInfo(id) {
+  var info = document.getElementById(id);
+  if (info.style.display === "none") {
+    info.style.display = "block"; // Show info
+  } else {
+    info.style.display = "none"; // Hide info
+  }
+}
+.project-card img {
+  border-radius: 10px;
+}
+
+.project-card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
