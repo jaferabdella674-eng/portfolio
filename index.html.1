@@ -1,0 +1,59 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero" id="hero">
+    <h2>Welcome to My Portfolio Website</h2>
+    <p>I am a Web Developer & Designer</p>
+    <img src="images/profile.jpg" alt="Profile Image">
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Jafer Abdella, passionate about web development. I create interactive and responsive websites using HTML, CSS, and JavaScript.</p>
+</section>
+
+<section id="portfolio">
+    <h2>My Portfolio</h2>
+    <div class="gallery">
+        <img src="images/project1.jpg" alt="Project 1">
+        <img src="images/project2.jpg" alt="Project 2">
+        <img src="images/project3.jpg" alt="Project 3">
+        <img src="images/project4.jpg" alt="Project 4">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="userMessages"></div>
+</section>
+
+<footer>
+    © 2025 Jafer Abdella Portfolio
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
