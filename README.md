@@ -184,3 +184,28 @@
 
 </body>
 </html>
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="project-card">
+    <img src="project1.png" alt="Project 1" width="250">
+    <h3>HTML & CSS Page</h3>
+    <p id="info1" style="display:none;">This project shows my HTML and CSS skills with a simple webpage layout.</p>
+    <button onclick="showInfo('info1')">Show Info</button>
+  </div>
+
+  <div class="project-card">
+    <img src="project2.png" alt="Project 2" width="250">
+    <h3>JavaScript Interactive</h3>
+    <p id="info2" style="display:none;">This project demonstrates JavaScript interactivity with button clicks.</p>
+    <button onclick="showInfo('info2')">Show Info</button>
+  </div>
+
+  <div class="project-card">
+    <img src="project3.png" alt="Project 3" width="250">
+    <h3>Portfolio Update</h3>
+    <p id="info3" style="display:none;">This project shows my updated portfolio with new design and layout.</p>
+    <button onclick="showInfo('info3')">Show Info</button>
+  </div>
+
+</section>
