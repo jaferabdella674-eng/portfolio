@@ -1,0 +1,75 @@
+ML.index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "footer footer";
+        grid-gap: 40px;
+        padding: 20px;
+    }
+
+    header {
+        grid-area: header;
+        background-color: #3498db;
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        background-color: #e74c3c;
+        color: white;
+        padding: 20px;
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #2ecc71;
+        color: white;
+        padding: 20px;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #34495e;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+        .grid-container {
+            grid-template-areas:
+                "header"
+                "main"
+                "sidebar"
+                "footer";
+        }
+    }
+</style>
+</head>
+<body>
+<div class="grid-container">
+    <header>Header</header>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+    <footer>Footer</footer>
+</div>
+</body>
+</html>
