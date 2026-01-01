@@ -152,10 +152,29 @@
     </div>
 
     <!-- CONTACT -->
-    <div class="box" id="contact">
-      <h2>Contact Me</h2>
-      <p>Email: jafer@example.com</p>
-      <p>Phone: +251 912 345 678</p>
+<div class="box" id="contact">
+  <h2>Contact Me</h2>
+
+  <p>
+    📧 Email:
+    <a href="mailto:jaferabdella674@gmail.com">
+      jaferabdella674@gmail.com
+    </a>
+  </p>
+
+  <p>
+    📞 Phone:
+    <a href="tel:+252637219188">
+      +252 637 219 188
+    </a>
+  </p>
+</div>
+<p>
+  💬 WhatsApp:
+  <a href="https://wa.me/252637219188" target="_blank">
+    Chat on WhatsApp
+  </a>
+</p>
       <button onclick="alert('Thanks for contacting me!')">Send Message</button>
     </div>
 
@@ -163,49 +182,6 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Jafer Abdella Portfolio</p>
+  <p>© 2026 Jafer Abdella | All Rights Reserved</p>
+</footer>
   </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleAbout() {
-      const x = document.getElementById("moreAbout");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-
-    function showProjectAlert() {
-      alert("Projects page coming soon! 🚀");
-    }
-  </script>
-
-</body>
-</html>
-<section id="projects">
-  <h2>My Projects</h2>
-
-  <div class="project-card">
-    <img src="project1.png" alt="Project 1" width="250">
-    <h3>HTML & CSS Page</h3>
-    <p id="info1" style="display:none;">This project shows my HTML and CSS skills with a simple webpage layout.</p>
-    <button onclick="showInfo('info1')">Show Info</button>
-  </div>
-
-  <div class="project-card">
-    <img src="project2.png" alt="Project 2" width="250">
-    <h3>JavaScript Interactive</h3>
-    <p id="info2" style="display:none;">This project demonstrates JavaScript interactivity with button clicks.</p>
-    <button onclick="showInfo('info2')">Show Info</button>
-  </div>
-
-  <div class="project-card">
-    <img src="project3.png" alt="Project 3" width="250">
-    <h3>Portfolio Update</h3>
-    <p id="info3" style="display:none;">This project shows my updated portfolio with new design and layout.</p>
-    <button onclick="showInfo('info3')">Show Info</button>
-  </div>
-
-</section>
