@@ -1,221 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jafer Portfolio</title>
+index.html
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JAFER A Web</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    /* HEADER */
-    header {
-      background: #0d6efd;
-      color: white;
-      padding: 40px 20px;
       text-align: center;
-      transition: background 0.3s;
-    }
-
-    header:hover {
-      background: #0b5ed7;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-
-    /* NAV */
-    nav {
-      background: #333;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      padding: 15px 25px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background: #555;
-    }
-
-    /* MAIN CONTENT */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
       padding: 20px;
-      justify-content: center;
+      background-color: #f0f8ff;
     }
 
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      flex: 1 1 300px;
-      max-width: 400px;
-      transition: transform 0.3s, background 0.3s;
-      cursor: pointer;
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
     }
 
-    .box:hover {
-      transform: scale(1.05);
-      background: #e0f7ff;
-    }
-
-    .box h2 {
-      margin-top: 0;
-    }
-
-    }
-
-    button:hover {
-      background: #198754;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top:10px;
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #004080;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Jafer Abdella</h1>
-    <p>Web Developer Beginner Portfolio</p>
-  </header>
+  <h1>JAFEE</h1>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <h3>1. Button Alert</h3>
+  <button onclick="alert('Practice Alert!')">Click Me</button>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
+  <hr>
 
-    <!-- ABOUT -->
-    <div class="box" id="about">
-      <h2>About Me</h2>
-      <p>Ani HTML, CSS, fi JavaScript barachaa jira. Web developer ta’uu barbaada.</p>
-      <button onclick="toggleAbout()">Show/Hide More</button>
-      <p id="moreAbout" style="display:none;">Portfolio kana keessatti projects koo fi skills koo argachuu dandeessa.</p>
-    </div>
+  <h3>2. Text Change</h3>
+  <p id="text">Original Text</p>
+  <button onclick="document.getElementById('text').innerHTML = 'Text Changed!'">Change</button>
 
-    <!-- PROJECTS -->
-    <div class="box" id="projects">
-      <h2>My Projects</h2>
-      <p>HTML & CSS Project</p>
-      <p>JavaScript Interactive Project</p>
-      <button onclick="showProjectAlert()">View More</button>
-    </div>
+  <hr>
 
-    <!-- CONTACT -->
-    <div class="box" id="contact">
-  
+  <h3>3. Input Name & Show Message</h3>
+  <input type="text" id="name" placeholder="Enter your name">
+  <button onclick="JAFAR ()">Say JAFEE👌🐄</button>
 
-<form action="https://formspree.io/f/xyzzabcd" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required><br><br>
-  <input type="email" name="email" placeholder="Your Email" required><br><br>
-  <textarea name="message" placeholder="Your Message" required></textarea><br><br>
-  <button type="submit">Send Message</button>
+  <p id="result"></p>
 
-}Jafer Abdella:
-<p>
-  💬 WhatsApp:
-  <a href="https://wa.me/252637219188" target="_blank">
-    Chat on WhatsApp
-  </a>
-</p>
-<form action="https://formspree.io/f/xyzzabcd" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required><br><br>
-  <input type="email" name="email" placeholder="Your Email" required><br><br>
-  <textarea name="message" placeholder="Your Message" required></textarea><br><br>
-  <button type="submit">Send Message</business;
-
-.box {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-  
-</footer>hover {
-  transform: translateY(-5px);
-}
-  <p>
-    📧 Email:
-    <a href="mailto:jaferabdella674@gmail.com">
-      jaferabdella674@gmail.com
-    </a>
-  </p>
-
-  <p>
-    📞 Phone:
-    <a href="tel:+252637219188">
-      +252 637 219 188
-    </a>
-  </p>
-
-<p>Gara fulaa itti aanu!</p>
-      <button onclick="alert('Thanks for contacting me!')">Send Message</button>
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-  
-  </footer>
-
-  <!-- JAVASCRIPT -->
   <script>
-    function toggleAbout() {
-      const x = document.getElementById("moreAbout");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-
-    function showProjectAlert() {
-      alert("Projects page coming soon! 🚀");
+    function greetUser() {
+      let user = document.getElementById("name").value;
+      document.getElementById("result").innerHTML = "Hello " + user + " 👋";
     }
   </script>
-<footer>
-  <p>© 2026 Jafer Abdella | All Rights Reserved</p>
-</footer>
+
 </body>
 </html>
-  
