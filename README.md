@@ -1,1 +1,1 @@
-https://django-blog-lh0q.onrender.com
+https://django-blog-kpln.onrender.com
