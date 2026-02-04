@@ -41,35 +41,36 @@ index.html
         .section {
             padding: 30px 20px;
             text-align: center;
-        }
+        }import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+
+public class ContactServlet extends HttpServlet {
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+
+    // Form irraa data fudhachuu
+    String name = request.getParameter("name");
+    String email = request.getParameter("email");
+    String message = request.getParameter("message");
+
+    // File keessatti save gochuu
+    FileWriter fw = new FileWriter("messages.txt", true); // true = append
+    fw.write("Name: " + name + ", Email: " + email + ", Message: " + message + "\n");
+    fw.close();
+
+    // Response browser irratti agarsiisuu
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+    out.println("<h2>Thank you " + name + "</h2>");
+    out.println("<p>Your message has been saved!</p>");
+  }
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             padding: 20px;
         }
-        <section id="contact">
-  <h2>Contact Me</h2
-        import java.io.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-
-public class ContactServlet extends HttpServlet {
-
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-  throws ServletException, IOException {
-
-    String name = request.getParameter("name");
-    String email = request.getParameter("email");
-    String message = request.getParameter("message");
-
-    response.setContentType("text/html");
-    PrintWriter out = response.getWriter();
-
-    out.println("<h2>Thank you " + name + "</h2>");
-    out.println("<p>Message received!</p>");
-  }
-</section>
         .card {
             background: white;
             padding: 20px;
@@ -82,7 +83,6 @@ public class ContactServlet extends HttpServlet {
             text-align: center;
             padding: 20px;
             margin-top: 40px;
-        }
         @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -97,22 +97,7 @@ public class ContactServlet extends HttpServlet {
     width: 100%;
     margin-bottom: 15px;
   }
-        #contact {
-  padding: 20px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-}
-
-button {
-  background: #1a73e8;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+        }
     </style>
 </head>
 <body><header>
@@ -200,3 +185,4 @@ button {
 
 
 
+        
