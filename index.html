@@ -48,6 +48,16 @@ index.html
             gap: 20px;
             padding: 20px;
         }
+        <section id="contact">
+  <h2>Contact Me</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name" required><br><br>
+    <input type="email" placeholder="Your Email" required><br><br>
+    <textarea placeholder="Your Message" required></textarea><br><br>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
         .card {
             background: white;
             padding: 20px;
@@ -61,6 +71,36 @@ index.html
             padding: 20px;
             margin-top: 40px;
         }
+        @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+        #contact {
+  padding: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+button {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
     </style>
 </head>
 <body><header>
@@ -138,6 +178,7 @@ index.html
 <footer>
   <p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
+
 
 
 
