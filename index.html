@@ -49,14 +49,26 @@ index.html
             padding: 20px;
         }
         <section id="contact">
-  <h2>Contact Me</h2>
+  <h2>Contact Me</h2
+        import java.io.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 
-  <form>
-    <input type="text" placeholder="Your Name" required><br><br>
-    <input type="email" placeholder="Your Email" required><br><br>
-    <textarea placeholder="Your Message" required></textarea><br><br>
-    <button type="submit">Send Message</button>
-  </form>
+public class ContactServlet extends HttpServlet {
+
+  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+  throws ServletException, IOException {
+
+    String name = request.getParameter("name");
+    String email = request.getParameter("email");
+    String message = request.getParameter("message");
+
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+
+    out.println("<h2>Thank you " + name + "</h2>");
+    out.println("<p>Message received!</p>");
+  }
 </section>
         .card {
             background: white;
@@ -178,6 +190,7 @@ button {
 <footer>
   <p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
+
 
 
 
