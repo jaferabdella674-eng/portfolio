@@ -15,8 +15,9 @@ index.html
             background: #ff8800;
             color: white;
             padding: 20px;
-            text-align: center;
-        }
+            text-align: center
+            
+    < img scr"My logo.png and Jafer jpng" "alt= sample image">
         nav {
             background: #dc143c;
             padding: 10px;
@@ -25,49 +26,27 @@ index.html
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 15px;
             font-weight: bold;
         }
         .hero {
             background: #0a84ff;
             color: white;
-            padding: 30px 10px;
+            padding: 10px 5px;
             text-align: center;
         }
         .hero h1 {
-            font-size: 38px;
+            font-size: 28px;
             margin-bottom: 10px;
         }
         .section {
             padding: 30px 20px;
             text-align: center;
-        }import java.io.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
 
-public class ContactServlet extends HttpServlet {
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-
-    // Form irraa data fudhachuu
-    String name = request.getParameter("name");
-    String email = request.getParameter("email");
-    String message = request.getParameter("message");
-
-    // File keessatti save gochuu
-    FileWriter fw = new FileWriter("messages.txt", true); // true = append
-    fw.write("Name: " + name + ", Email: " + email + ", Message: " + message + "\n");
-    fw.close();
-
-    // Response browser irratti agarsiisuu
-    response.setContentType("text/html");
-    PrintWriter out = response.getWriter();
-    out.println("<h2>Thank you " + name + "</h2>");
-    out.println("<p>Your message has been saved!</p>");
   }
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr 2fr));
             gap: 20px;
             padding: 20px;
         }
@@ -75,22 +54,24 @@ public class ContactServlet extends HttpServlet {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
         footer {
-            background: #000;
+            background: #111;
             color: white;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
-        
+        }
     </style>
 </head>
-<body><header>
+<body>
+    <header>
     <h1>Jafer Media</h1>
     <p>Your Creative Design & Media Studio</p>
-</header><nav>
-    <a href="#home">Home</a>
+</header>
+    <nav>
+    <a href="index.html">Home</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
 </nav><section class="hero" id="home">
@@ -172,4 +153,5 @@ public class ContactServlet extends HttpServlet {
 
 
         
+
 
