@@ -1,3 +1,4 @@
+index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: 0.5s;
+}
+
+.dark {
+    background: #93016a;
+    color: white;
 }
 
 header {
-    background: #4caf50;
+    background: #ff8800;
     color: white;
-    padding: 60px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -24,159 +31,197 @@ nav {
     padding: 10px;
     text-align: center;
 }
-    nav a {
+
+nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-.hero h1{
-    font-size: 2.5em;
-    margin-bottom: 10px;
-margin :20px
-
-}
-.section{
-background-color:0afb54
- color:white 
-    padding:50px
-    margin:20px
-.services { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr 2fr));
-    gap: 20px;
-    padding: 20px;
+button {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.card{
-    background:#f0f0f0;
-    padding: 15px;
-    border-radius:10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.footer {
-    background: black;
+.hero {
+    background: linear-gradient(45deg,#0a84ff,#00c6ff);
     color: white;
-    margin: 5px;
-    padding: 10px;
+    padding: 60px 10px;
     text-align: center;
-    text-decoration:none;
-    border-radius: 20px;
+    animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px);} 
+to {opacity:1; transform:translateY(0);} 
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10p
+}
+    ,,
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+/* Social Media Icons */
+.social-icons {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.social-icons a:hover {
+  color: #ee6983;
+}
+
+
+footer {
+    background: #3f5e08;
+    color: white;
+    padding: 20px;
+    text-align: center;
+	border-radius:20px
+}
+
+/* ⭐ Horizontal Scroll CSS added here */
+.horizontal-scroll{
+  background:#d50998;
+  padding:15px;
+  border-top:4px solid #93016a;
+  border-bottom:4px solid #93016a;
+  overflow:hidden;
+  white-space:nowrap;
+  margin:40px 0;
+}
+
+.scroll-content{
+  display:inline-block;
+  animation:scroll-left 15s linear infinite;
+}
+
+.scroll-content span{
+  font-size:18px;
+  font-weight:600;
+color:#93016a;
+  margin:0 25px;
+}
+
+@keyframes scroll-left{
+  0%{
+    transform:translateX(0);
+    color:#ffd700;
+  }
+  50%{
+    color:#ffd700;
+  }
+  100%{
+    transform:translateX(-50%);
+    color:white;
+  }
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
-<img src="jafer logo.png" width="300" alt="Logo">
 <h1>Jafer Media</h1>
 <p>Your Creative Design & Media Studio</p>
+<button onclick="toggleMode()">Dark Mode</button>
 </header>
 
 <nav>
-<a href="index.html">Home</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
 <a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
-<a href="#project">Project</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
 <h1>Welcome to Jafer Media</h1>
 <p>We create logos, posters, websites, and social media designs.</p>
-</section><section class= "section" id ="services">
+</section>
 
-    <h1>Welcome to Jafer Media</h1>
-    <p>We create logos, posters, websites, and social media designs.</p>
-</section><section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Logo Design</h3>
-            <p>Professional logos for brands and businesses.</p>
-        </div>
-        <div class="card">
-            <h3>Photo & Video Editing</h3>
-            <p>High-quality editing for personal & commercial use.</p>
-        </div>
-        <div class="card">
-            <h3>Website Design</h3>
-            <p>Modern, clean websites for your business or portfolio.</p>
-        </div>
-        <div class="card">
-            <h3>Social Media Content</h3>
-           <p>Beautiful posts, stories, and banners for all platforms.</p>
-            <img src="Jafer.jpng" width="200">
-        
-<div class="contact-icons">
-  <!-- WhatsApp -->
-  <a href="https://wa.me/252637219188" target="_blank">
-    <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
-  </a>
-
-  <!-- Call -->
-  <a href="tel:+252637219188">
-    <img src="https://img.icons8.com/color/48/phone.png" alt="Call">
-  </a>
-
-  <!-- Email -->
-  <a href="mailto:jaferabdella674@gmail.com">
-    <img src="https://img.icons8.com/color/48/gmail-new.png" alt="Email">
-  </a>
-
-  <!-- Telegram -->
-  <a href="https://t.me/YOUR_TELEGRAM_Jafer Abdella" target="_blank">
-    <img src="https://img.icons8.com/color/48/telegram-app--v1.png" alt="Telegram">
-  </a>
-
-  <!-- Facebook -->
-  <a href="https://facebook.com/YOUR_FACEBOOK_Jafer Abdella" target="_blank">
-    <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
-  </a>
+<!-- ⭐ Horizontal Scroll HTML added -->
+<div class="horizontal-scroll">
+  <div class="scroll-content">
+    <span>⭐Welcome to Jafer Media</span>
+    <span>⭐Graphic Design</span>
+    <span>⭐Website Development</span>
+    <span>⭐Logo & Poster Design</span>
+    <span>⭐Social Media Content</span>
+  </div>
 </div>
-<p>
-  💬 WhatsApp:
-  <a href="https://wa.me/252637219188" target="_blank">
-    Chat on WhatsApp
-  <p>
-<a href="https://github.com/Jaferabdella674-eng/portfolio" class="btn" target="_blank">View Project</a>
-    </div><div class="box" id="contact">
-  <h2>Contact Me</h2>
 
-  <p>
-    📧 Email:
-    <a href="mailto:jaferabdella674@gmail.com">
-      jaferabdella674@gmail.com
-    </a>
-  <a href="tel:+252637219188" class="call-btn">
-  📞 Call Me
-  </a>
-}
+<section class="section" id="about">
+<h2>About Me</h2>
+<p>I am Jafer Abdella, graphic designer and web developer.</p>
+</section>
+
+<section class="section" id="services">
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">Logo Design</div>
+<div class="card">Photo Editing</div>
+<div class="card">Website Design</div>
+<div class="card">Social Media Content</div>
+</div>
+</section>
+
+<section class="section Jafe" id="jafe">
+<h2>my jafe</h2>
+<img src="logo.png" "Jafer logo.png">
+
+</section>
+
+<section class="section" id="contact">
+<h2>Contact Me</h2>
+<form>
+</section
+<div class="social-icons">
+  <a href="mailto:jaferabdella674@gmail.com" target="_blank">✉️ Email</a>
+  <a href="https://wa.me/252637219188" target="_blank">📱 WhatsApp</a>
+  <a href="https://t.me/@jaferAbdella" target="_blank">📨 Telegram</a>
+  <a href="https://www.facebook.com/JaferAbdella90" target="_blank">📘 Facebook</a>
+  <a href="tel:+252637219188">📞 Call</a>
+</div>
+    </form>
 <footer>
-  <p>© 2026 Jafer Abdella | All Rights Reserved</p>
+<p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
 
+<script>
+function toggleMode(){
+ document.body.classList.toggle("aqua");
+}
+</script>
 
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
