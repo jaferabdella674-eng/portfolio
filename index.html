@@ -7,6 +7,10 @@ index.html
 <title>Jafer Media</title>
 
 <style>
+/* Smooth scroll */
+html{
+  scroll-behavior:smooth
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -113,6 +117,37 @@ form input, form textarea {
 .social-icons a:hover {
   color: #ee6983;
 }
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  background: #ff8800;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.top button{
+let btn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+  if(document.body.scrollTop>200 || document.documentElement.scrollTop>200){
+    btn.style.display="block";
+  } else {
+    btn.style.display="none";
+  }
+}
+
+function topFunction(){
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+
+
 
 
 footer {
@@ -158,6 +193,7 @@ color:#93016a;
     transform:translateX(-50%);
     color:white;
   }
+	
 }
 </style>
 
@@ -243,4 +279,5 @@ function toggleMode(){
 
 </body>
 </html>
+
 
