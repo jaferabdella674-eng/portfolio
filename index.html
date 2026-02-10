@@ -25,6 +25,20 @@ header {
     padding: 20px;
     text-align: center;
 }
+header {
+    position: relative;
+    padding: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 80px;
+
+    padding: 5px;
+    margin: 5px;
+}
 
 nav {
     background: #dc143c;
@@ -104,7 +118,7 @@ form input, form textarea {
 footer {
     background: #3f5e08;
     color: white;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
 	border-radius:20px
 }
@@ -113,8 +127,8 @@ footer {
 .horizontal-scroll{
   background:#d50998;
   padding:15px;
-  border-top:4px solid #93016a;
-  border-bottom:4px solid #93016a;
+  border-top:5px solid #93016a;
+  border-bottom:5px solid #93016a;
   overflow:hidden;
   white-space:nowrap;
   margin:40px 0;
@@ -151,6 +165,8 @@ color:#93016a;
 <body>
 
 <header>
+    <img src="images/Jaferlogo.png" class="logo">
+    right-to:0px
 <h1>Jafer Media</h1>
 <p>Your Creative Design & Media Studio</p>
 <button onclick="toggleMode()">Dark Mode</button>
@@ -196,8 +212,8 @@ color:#93016a;
 </section>
 
 <section class="section Jafe" id="jafe">
-<h2>my jafe</h2>
-<img src="logo.png" "Jafer logo.png">
+<h2>my logo</h2>
+<img src="logo.png" "Jaferlogo.png" "width:300">
 
 </section>
 
@@ -213,15 +229,18 @@ color:#93016a;
   <a href="tel:+252637219188">📞 Call</a>
 </div>
     </form>
+
+	
 <footer>
 <p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
 
 <script>
 function toggleMode(){
- document.body.classList.toggle("aqua");
+ document.body.classList.toggle("dark green");
 }
 </script>
 
 </body>
 </html>
+
