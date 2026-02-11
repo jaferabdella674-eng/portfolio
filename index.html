@@ -6,85 +6,74 @@
 <title>Jafer Media</title>
 
 <style>
-/* Smooth scroll */
 html{scroll-behavior:smooth;}
 
-.body{
-  font-family:Arial, sans-serif;
-  margin:0;
-  padding:0;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+
+body{background:#f4f4f4;line-height:1.6;}
 
 /* Dark mode */
-.dark{
-  background:#93016a;
-  color:white;
-}
+.dark{background:#93016a;color:white;}
 
 /* Header */
-.header{
+header{
   background:#ff8800;
   color:white;
   padding:20px;
   text-align:center;
   position:relative;
 }
-
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px);} 
+to {opacity:1; transform:translateY(0);} 
+}
 .logo{
   position:absolute;
   top:10px;
   right:15px;
-  width:100px;
+  width:80px;
 }
 
 /* Navbar */
-.nav{
-  background:#dc143c;
-  padding:10px;
-  text-align:center;
-}
+nav{background:#dc143c;padding:10px;text-align:center;}
 
-.nav a{
+nav a{
   color:white;
   margin:0 15px;
   text-decoration:none;
   font-weight:bold;
 }
 
-.button{
-  padding:6px 12px;
-  border:none;
-  cursor:pointer;
-  border-radius:6px;
-}
+nav a:hover{color:yellow;}
+
+button{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;}
 
 /* Hero */
 .hero{
   background:linear-gradient(45deg,#0a84ff,#00c6ff);
   color:white;
-  padding:60px 10px;
+  padding:70px 15px;
   text-align:center;
 }
 
-.section{
-  padding:40px 20px;
-  text-align:center;
-}
+.section{padding:50px 20px;text-align:center;}
 
 /* Services */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
+  margin-top:20px;
 }
 
 .card{
-  background:#475519;
+  background:white;
   padding:20px;
   border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Horizontal scroll */
+/* Horizontal Scroll */
 .horizontal-scroll{
   background:#d50998;
   padding:15px;
@@ -97,101 +86,90 @@ html{scroll-behavior:smooth;}
 
 .scroll-content{
   display:inline-block;
-  animation:scroll-left 15s linear infinite;
+  animation:scroll-left 18s linear infinite;
 }
 
 .scroll-content span{
   font-size:18px;
-  font-weight:600;
+  font-weight:bold;
   color:#ffd700;
   margin:0 25px;
-}
-
+} 
 @keyframes scroll-left{
   0%{
-transform:translateX(0%);
-  color:ffd700;
-   }
-  100%{
-    transform:translateX(-50
-     color:white;                    
-  } 
-}
-  .section-contact{
-    display: grid;
-   grid-teplate-columns:1fr 1fr; 
-    width:100%;
-    max-width:1024;
-    border:1px solid;
-    margin: 30px auto;
-    padding: 20px
-      }
-    .contact-header{
-    color#:d550998;
-      margin:6px 0;
-      }
-  .contact-details{
-    color:#222;
-    margin-bottom: 5px;
-    }
-    .contact-grid{
-     background-color:rgba (222,57,90, 0.275;
-		padding:20px;	
+    transform:translateX(0);
+    color:#EE6983;
   }
-.contact -form input,
-.contact-formtextarea{
-	width:80px;
-	padding:10px;
-	margin-bottom:12px;
-	border-radius:10px;
-	border:none;
-background -color:#23030e;
-border-color:#dc143c;
-}
-/* Form */
-.form input,form textarea{
-  width:80%;
-  padding:10px;
-  margin:10px 0;
+  50%{
+    color:#475519;
+  }
+  100%{
+    transform:translateX(-50%);
+    color:white;
+  }
 }
 
-/* Social icons */
-.social-icons{
-  margin:20px 0;
-  text-align:center;
+/* Contact Section */
+.contact-section{
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+  border:1px solid #ccc;
+  border-radius:10px;
 }
+
+.contact-details p{margin:5px 0;}
+
+/* Form */
+form input, form textarea{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* Social Icons */
+.social-icons{margin-top:20px;}
 
 .social-icons a{
   margin:0 10px;
   text-decoration:none;
-  color:white;
   font-size:18px;
 }
 
 /* Footer */
-.footer{
+footer{
   background:#3f5e08;
   color:white;
-  padding:15px;
+  padding:5px;
   text-align:center;
+  margin-top:30px;
 }
 
 /* Scroll top button */
-.topBtn{
+#topBtn{
   position:fixed;
   bottom:20px;
   right:20px;
   display:none;
-  padding:14px 10px;
+  padding:12px 16px;
   border-radius:50%;
   background:#ff8800;
   color:white;
-  border:none;
-  cursor:pointer;
 }
+
+/* Mobile Responsive */
+@media(max-width:600px){
+ nav a{display:block;margin:8px 0;}
+ .hero{padding:50px 10px;}
+}
+
 </style>
 </head>
+
 <body>
+
 <header>
 <img src="images/Jaferlogo.png" class="logo" alt="logo">
 <h1>Jafer Media</h1>
@@ -237,25 +215,20 @@ border-color:#dc143c;
 </section>
 
 <section class="section" id="contact">
-  <div class="contacr-section">
-    <div class "contact- concent">
-      <div class="contact header">
+<div class="contact-section">
 <h2>Contact Me</h2>
-  <h3>Let's work Together</h3>
-        </div>
-      <div class="contact- details">
-        <p>Email:jaferabdella674@gmail.com</p>
-        <p> Contact:+252637219188</p>
-        <p>Location:hargeisa:somaliland</p>
-        </div>
-<form action="https://api.web3forms.com/submit" method="POST"contact-form" >
+<p>Email: jaferabdella674@gmail.com</p>
+<p>Phone: +252637219188</p>
+<p>Location: Hargeisa</p>
+
+<form action="https://api.web3forms.com/submit" method="POST" "contact-form" >
 <input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder=" your Message" required></textarea>
+<textarea name="message" placeholder="Your Message" required></textarea>
 <button type="submit">Send</button>
 </form>
-<footer>
+
 <div class="social-icons">
 <a href="mailto:jaferabdella674@gmail.com">✉️ Email</a>
 <a href="https://wa.me/252637219188">📱 WhatsApp</a>
@@ -263,9 +236,10 @@ border-color:#dc143c;
 <a href="https://www.facebook.com/JaferAbdella90">📘 Facebook</a>
 <a href="tel:+252637219188">📞 Call</a>
 </div>
+</div>
 </section>
 
-
+<footer>
 <p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
 
