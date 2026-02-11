@@ -1,4 +1,3 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,165 +7,84 @@ index.html
 
 <style>
 /* Smooth scroll */
-html{
-  scroll-behavior:smooth
+html{scroll-behavior:smooth;}
 
-.body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.dark {
-    background: #93016a;
-    color: white;
+.body{
+  font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
 }
 
-.header {
-    background: #ff8800;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-.header {
-    position: relative;
-    padding: 20px;
+/* Dark mode */
+.dark{
+  background:#93016a;
+  color:white;
 }
 
-.logo {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    width: 80px;
-
-    padding: 5px;
-    margin: 5px;
+/* Header */
+.header{
+  background:#ff8800;
+  color:white;
+  padding:20px;
+  text-align:center;
+  position:relative;
 }
 
-.nav {
-    background: #dc143c;
-    padding: 10px;
-    text-align: center;
+.logo{
+  position:absolute;
+  top:10px;
+  right:15px;
+  width:100px;
 }
 
-.nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+/* Navbar */
+.nav{
+  background:#dc143c;
+  padding:10px;
+  text-align:center;
 }
 
-.button {
-    padding: 12px  6px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
+.nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.hero {
-    background: linear-gradient(45deg,#0a84ff,#00c6ff);
-    color: white;
-    padding: 60px 10px;
-    text-align: center;
+.button{
+  padding:6px 12px;
+  border:none;
+  cursor:pointer;
+  border-radius:6px;
 }
 
-@keyframes fadeIn {
-from {opacity:0; transform:translateY(20px);} 
-to {opacity:1; transform:translateY(0);} 
+/* Hero */
+.hero{
+  background:linear-gradient(45deg,#0a84ff,#00c6ff);
+  color:white;
+  padding:60px 10px;
+  text-align:center;
 }
 
-.section {
-    padding: 40px 20px;
-    text-align: center;
+.section{
+  padding:40px 20px;
+  text-align:center;
 }
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
+/* Services */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
 
-.card {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 10p
-}
-.form input, form textarea {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-}
-/* Social Media Icons */
-.social-icons {
-  margin: 20px 0;
-  text-align: center;
+.card{
+  background:#475519;
+  padding:20px;
+  border-radius:10px;
 }
 
-.social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  transition: 0.5s;
-}
-	. social media h3{
-		front -size:24px
-		margin:10px
-	}
-.social-icons i:hover {
-  color: #ee6983;
-}
-#topBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  padding: 10px 14px;
-  border-radius: 50%;
-  background: #ff8800;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-
-.top button{
-let btn = document.getElementById("topBtn");
-
-window.onscroll = function(){
-  if(document.body.scrollTop>200 || document.documentElement.scrollTop>200){
-    btn.style.display="block";
-  } else {
-    btn.style.display="none";
-  }
-}
-
-function topFunction(){
-  window.scrollTo({top:0, behavior:"smooth"});
-}
-
-.footer {
-    background: #3f5e08;
-    color: white;
-    padding: 5px;
-    text-align: center;
-	border-radius:20px
-}
-.footer-container{
-	display flex;
-	justify-content:space-between;
-	width:100%;
-	max-width:1024px;
-	margin:30px auto;
-	padding:30px
-}
-.footer;copy{
-	text align: center;
-	front-size:12px;
-	color: dark gray;
-}
-/* ⭐ Horizontal Scroll CSS added here */
+/* Horizontal scroll */
 .horizontal-scroll{
   background:#d50998;
   padding:15px;
@@ -185,48 +103,97 @@ function topFunction(){
 .scroll-content span{
   font-size:18px;
   font-weight:600;
-color:#93016a;
+  color:#ffd700;
   margin:0 25px;
 }
-.section-title h3{
-}
-.contact-section{
-	display:flex;
-	justify-content:space-between;
-	align-items:center;
-	width:100%;
-	max-width:1024px;
-	border:2px solid;
-	margin:30px auto;
-	padding:20px;
-}
+
 @keyframes scroll-left{
   0%{
-    transform:translateX(0);
-    color:#ffd700;
-  }
-  50%{
-    color:#ffd700;
-  }
+transform:translateX(0%);
+  color:ffd700;
+   }
   100%{
-    transform:translateX(-50%);
-    color:white;
-  }
-	
+    transform:translateX(-50
+     color:white;                    
+  } 
 }
-@media(max-width:678px;{{
-	   .nav-links{
-		display:none;
-	   }
+  .section-contact{
+    display: grid;
+   grid-teplate-columns:1fr 1fr; 
+    width:100%;
+    max-width:1024;
+    border:1px solid;
+    margin: 30px auto;
+    padding: 20px
+      }
+    .contact-header{
+    color#:d550998;
+      margin:6px 0;
+      }
+  .contact-details{
+    color:#222;
+    margin-bottom: 5px;
+    }
+    .contact-grid{
+     background-color:rgba (222,57,90, 0.275;
+		padding:20px;	
+  }
+.contact -form input,
+.contact-formtextarea{
+	width:80px;
+	padding:10px;
+	margin-bottom:12px;
+	border-radius:10px;
+	border:none;
+background -color:#23030e;
+border-color:#dc143c;
+}
+/* Form */
+.form input,form textarea{
+  width:80%;
+  padding:10px;
+  margin:10px 0;
+}
+
+/* Social icons */
+.social-icons{
+  margin:20px 0;
+  text-align:center;
+}
+
+.social-icons a{
+  margin:0 10px;
+  text-decoration:none;
+  color:white;
+  font-size:18px;
+}
+
+/* Footer */
+.footer{
+  background:#3f5e08;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
+
+/* Scroll top button */
+.topBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:none;
+  padding:14px 10px;
+  border-radius:50%;
+  background:#ff8800;
+  color:white;
+  border:none;
+  cursor:pointer;
 }
 </style>
-
 </head>
 <body>
-
 <header>
-    <img src="images/Jaferlogo.png" class="logo">
-    right-to:0px
+<img src="images/Jaferlogo.png" class="logo" alt="logo">
 <h1>Jafer Media</h1>
 <p>Your Creative Design & Media Studio</p>
 <button onclick="toggleMode()">Dark Mode</button>
@@ -236,7 +203,6 @@ color:#93016a;
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -245,15 +211,14 @@ color:#93016a;
 <p>We create logos, posters, websites, and social media designs.</p>
 </section>
 
-<!-- ⭐ Horizontal Scroll HTML added -->
 <div class="horizontal-scroll">
-  <div class="scroll-content">
-    <span>⭐Welcome to Jafer Media</span>
-    <span>⭐Graphic Design</span>
-    <span>⭐Website Development</span>
-    <span>⭐Logo & Poster Design</span>
-    <span>⭐Social Media Content</span>
-  </div>
+<div class="scroll-content">
+<span>⭐ Welcome to Jafer Media</span>
+<span>⭐ Graphic Design</span>
+<span>⭐ Website Development</span>
+<span>⭐ Logo & Poster Design</span>
+<span>⭐ Social Media Content</span>
+</div>
 </div>
 
 <section class="section" id="about">
@@ -271,47 +236,59 @@ color:#93016a;
 </div>
 </section>
 
-<section class="section Jafe" id="jafe">
-<h2>my logo</h2> iessaa kana  top- left goghi
-<img src="logo.png" "Jaferlogo.png" "width:300">
-
+<section class="section" id="contact">
+  <div class="contacr-section">
+    <div class "contact- concent">
+      <div class="contact header">
+<h2>Contact Me</h2>
+  <h3>Let's work Together</h3>
+        </div>
+      <div class="contact- details">
+        <p>Email:jaferabdella674@gmail.com</p>
+        <p> Contact:+252637219188</p>
+        <p>Location:hargeisa:somaliland</p>
+        </div>
+<form action="https://api.web3forms.com/submit" method="POST"contact-form" >
+<input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder=" your Message" required></textarea>
+<button type="submit">Send</button>
+</form>
+<footer>
+<div class="social-icons">
+<a href="mailto:jaferabdella674@gmail.com">✉️ Email</a>
+<a href="https://wa.me/252637219188">📱 WhatsApp</a>
+<a href="https://t.me/jaferAbdella">📨 Telegram</a>
+<a href="https://www.facebook.com/JaferAbdella90">📘 Facebook</a>
+<a href="tel:+252637219188">📞 Call</a>
+</div>
 </section>
 
-<section class="section" id="contact">
-<h2>Contact Me</h2>
-	<section class="section" id="contact">
-  <h2>Contact Me</h2>
-  <form>
-    <input type="text" placeholder="Your Name"><br>
-    <input type="email" placeholder="Your Email"><br>
-    <textarea placeholder="Message"></textarea><br>
-    <button>Send</button>
 
-<form>
-</section
-<div class="social-icons">
-  <a href="mailto:jaferabdella674@gmail.com" target="_blank">✉️ Email</a>
-  <a href="https://wa.me/252637219188" target="_blank">📱 WhatsApp</a>
-  <a href="https://t.me/@jaferAbdella" target="_blank">📨 Telegram</a>
-  <a href="https://www.facebook.com/JaferAbdella90" target="_blank">📘 Facebook</a>
-  <a href="tel:+252637219188">📞 Call</a>
-</div>
-    </form>
-
-	
-<footer>
-<p> copy© 2026 Jafer Abdella | All Rights Reserved</p>
+<p>© 2026 Jafer Abdella | All Rights Reserved</p>
 </footer>
+
+<button id="topBtn" onclick="topFunction()">↑</button>
 
 <script>
 function toggleMode(){
- document.body.classList.toggle("dark green");
+ document.body.classList.toggle("dark");
+}
+
+let btn=document.getElementById("topBtn");
+window.onscroll=function(){
+ if(document.documentElement.scrollTop>200){
+  btn.style.display="block";
+ }else{
+  btn.style.display="none";
+ }
+}
+
+function topFunction(){
+ window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
 
 </body>
 </html>
-
-
-
-
