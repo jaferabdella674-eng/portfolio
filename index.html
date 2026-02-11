@@ -15,7 +15,6 @@ html{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    transition: 0.5s;
 }
 
 .dark {
@@ -58,7 +57,7 @@ html{
 }
 
 .button {
-    padding: 6px 12px;
+    padding: 12px  6px;
     border: none;
     cursor: pointer;
     border-radius: 6px;
@@ -69,7 +68,6 @@ html{
     color: white;
     padding: 60px 10px;
     text-align: center;
-    animation: fadeIn 3s ease;
 }
 
 @keyframes fadeIn {
@@ -93,8 +91,7 @@ to {opacity:1; transform:translateY(0);}
     padding: 20px;
     border-radius: 10p
 }
-    ,,
-form input, form textarea {
+.form input, form textarea {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
@@ -116,7 +113,7 @@ form input, form textarea {
 	. social media h3{
 		front -size:24px
 		margin:10px
-
+	}
 .social-icons i:hover {
   color: #ee6983;
 }
@@ -149,10 +146,6 @@ function topFunction(){
   window.scrollTo({top:0, behavior:"smooth"});
 }
 
-
-
-
-
 .footer {
     background: #3f5e08;
     color: white;
@@ -172,7 +165,7 @@ function topFunction(){
 	text align: center;
 	front-size:12px;
 	color: dark gray;
-
+}
 /* ⭐ Horizontal Scroll CSS added here */
 .horizontal-scroll{
   background:#d50998;
@@ -195,7 +188,18 @@ function topFunction(){
 color:#93016a;
   margin:0 25px;
 }
-
+.section-title h3{
+}
+.contact-section{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	width:100%;
+	max-width:1024px;
+	border:2px solid;
+	margin:30px auto;
+	padding:20px;
+}
 @keyframes scroll-left{
   0%{
     transform:translateX(0);
@@ -210,7 +214,11 @@ color:#93016a;
   }
 	
 }
-@media
+@media(max-width:678px;{{
+	   .nav-links{
+		display:none;
+	   }
+}
 </style>
 
 </head>
@@ -264,13 +272,21 @@ color:#93016a;
 </section>
 
 <section class="section Jafe" id="jafe">
-<h2>my logo</h2>
+<h2>my logo</h2> iessaa kana  top- left goghi
 <img src="logo.png" "Jaferlogo.png" "width:300">
 
 </section>
 
 <section class="section" id="contact">
 <h2>Contact Me</h2>
+	<section class="section" id="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Message"></textarea><br>
+    <button>Send</button>
+
 <form>
 </section
 <div class="social-icons">
@@ -295,6 +311,7 @@ function toggleMode(){
 
 </body>
 </html>
+
 
 
 
