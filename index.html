@@ -8,220 +8,118 @@
 <style>
 html{scroll-behavior:smooth;}
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
- }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
-body{
-  background:#f4f4f4;
-  line-height:2.6;
-}
+body{background:#f4f4f4;line-height:1.6;}
 
-/* Dark mode */
-.dark{
-  background:#93016a;color:white;
-}
+.dark{background:#121212;color:white;}
 
-/* Header */
 header{
-  background:#ee6983;
-  color:white;
-  padding:20px;
-  text-align:center;
-  position:relative;
-}
-@keyframes fadeIn {
-from {opacity:0; transform:translateY(20px);} 
-to {opacity:1; transform:translateY(0);} 
-}
-.logo{
-  display grid;
-  top:10px;
-  right:15px;
-  width:80px;
+ background:#ee6983;
+ color:white;
+ padding:20px 15px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
 }
 
-/* Navbar */
-.nav{
-  background:#dc143c;
-  padding:10px;
-  text-align: right-top;
-}
+.logo{width:60px;display:block;margin-left:auto;order:3;}
+.header-title{font-size:26px;font-weight:bold;color:#ffd700;letter-spacing:1px;}
+.dark .header-title{color:#ffcc00;}
 
-.nav a{
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:678px;
-}
+.dark-mode-btn{background:#dc143c;color:white;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:bold;transition:.3s;}
+.dark-mode-btn:hover{background:#93016a;}
+.menu-btn{font-size:26px;cursor:pointer;display:none;}
 
-.nav a:hover{color:yellow;}
+nav{background:#dc143c;padding:12px;text-align:center;}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:yellow;}
 
-.button{
-  padding:8px 16px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
+.hero{background:#475519;color:white;padding:60px 15px;text-align:center;}
+.hero h1{color:#ffd700;}
 
-/* Hero */
-.hero{
-  background:#475519;
-  color:white;
-  padding:50px 15px;
-  text-align:center;
-}
+.section{padding:50px 20px;text-align:center;}
 
-.section{
-  padding:50px 20px;
-  margin-bottom:10px;
-  text-align:center;
-}
-  
-  
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:20px;}
+.card{background:#ffffff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);font-weight:bold;}
+.dark .card{background:#1f1f1f;color:white;}
 
-/* Services */
-.services{
-  background -color:#4caf50;
-  color: white;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr ));
-  gap:20px;
-  margin-top:20px;
-  border-radius10px;
-}
+.horizontal-scroll{background:#d50998;padding:15px;border-top:4px solid #93016a;border-bottom:4px solid #93016a;overflow:hidden;white-space:nowrap;margin:40px 0;}
+.scroll-content{display:inline-block;animation:scroll-left 18s linear infinite;}
+.scroll-content span{font-size:18px;font-weight:600;margin:0 25px;color:#23030e;}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-.card{
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:5 0 0px rgba(0,0,0,0.1);
-}
-
-/* Horizontal Scroll */
-.horizontal-scroll{
-  background:#d50998;
-  padding:15px;
-  border-top:4px solid #93016a;
-  border-bottom:4px solid #93016a;
-  overflow:hidden;
-  white-space:nowrap;
-  margin:40px 0;
-}
-
-.scroll-content{
-  display:inline-block;
-  animation:scroll-left 15s linear infinite;
-}
-
-.scroll-content span{
-  font-size:18px;
-  font-weight:600px;
-  margin:0 25 px;
-} 
-@keyframes scroll-left{
-  0%{
-    transform:translateX(0);
-    color:#EE6983;
-  }
-  50%{
-    color:#475519;
-  }
-  100%{
-    transform:translateX(-50%);
-    color:white;
-  }
-}
-
-/* Contact Section */
+/* Contact layout fixed */
 .contact-section{
-  display: grid;
-  grid-template-columns:1fr 1fr;
-  max-width:1024px;
-  margin:30px auto;
-  padding:20px;
-  
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:30px;
+ max-width:1100px;
+ margin:40px auto;
+ padding:20px;
 }
 
-.contact-details p{margin:5px 0 ;}
-  .contact-grid{
-    background -color:rgba(222, 57, 90, 0.275)
-    padding:20px;
-    border-radius:20px;
+.contact-details p{margin:8px 0;}
 
-/* contact-Form */
-contact-form input, form textarea{
-  width:80%;
-  padding:10px;
-  color: whitesmoke;
-  margin-bottom:12px;
-  border:radius 10px;
-  background -color#93016a;
-  border-color#850e35;
-}
-/* contact-Form */:focus;
-contact-form input, form textarea:focus;
-  outline:none;
-/* Social Icons */
+/* Social media right with new background */
 .social-icons{
-  margin-top:20px;
-  padding:10px;
-  }
+ display:flex;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-top:15px;
+ background:#23030e;
+ padding:15px;
+ border-radius:12px;
+ justify-content:flex-start;
+}
 
 .social-icons a{
-  margin:10 0px;
-  text-decoration:none;
-  font-size:38px;
-  padding:10px;
+ background:#dc143c;
+ color:white;
+ padding:8px 14px;
+ border-radius:20px;
+ text-decoration:none;
+ font-size:14px;
+ transition:.3s;
 }
 
-/* Footer */
-footer{
-  background:#3f5e08;
-  color:white;
-  padding:5px;
-  text-align:center;
-  margin-top:5px;
+.social-icons a:hover{background:#93016a;}
 
+.contact-form input,.contact-form textarea{
+ width:100%;
+ padding:10px;
+ margin-bottom:12px;
+ border-radius:8px;
+ border:1px solid #ccc;
 }
 
-/* Scroll top button */
-#topBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  display:none;
-  padding:12px 16px;
-  border-radius:50%;
-  background:#d50998;
-  color:white;
-}
+.contact-form button{background:#dc143c;color:white;padding:10px;border:none;border-radius:6px;}
 
-/* Mobile Responsive */
-@media(max-width:678px){
- nav a{display:grid;margin:8px 0;}
-}
- .hero{
-   padding:50px 10px;
- }
+footer{background:#3f5e08;color:white;padding:15px;text-align:center;margin-top:20px;}
 
+#topBtn{position:fixed;bottom:20px;right:20px;display:none;padding:12px 16px;border-radius:50%;background:#d50998;color:white;border:none;}
+
+@media(max-width:768px){
+ .menu-btn{display:block;}
+ nav{display:none;}
+ nav.active{display:block;}
+ nav a{display:block;margin:10px 0;}
+ .contact-section{grid-template-columns:1fr;}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="images/Jaferlogo.png" class="logo" alt="logo">
-<h1>Jafer Media</h1>
-<p>Your Creative Design & Media Studio</p>
-<button onclick="toggleMode()">Dark Mode</button>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="header-title">Jafer Media</div>
+<img src="images/jaferlogo.png" class="logo" alt="logo">
+<button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
 </header>
 
-<nav>
-<a href="index.html">Home</a>
+<nav id="navbar">
+<a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
@@ -234,6 +132,11 @@ footer{
 
 <div class="horizontal-scroll">
 <div class="scroll-content">
+<span>⭐ Welcome to Jafer Media</span>
+<span>⭐ Graphic Design</span>
+<span>⭐ Website Development</span>
+<span>⭐ Logo & Poster Design</span>
+<span>⭐ Social Media Content</span>
 <span>⭐ Welcome to Jafer Media</span>
 <span>⭐ Graphic Design</span>
 <span>⭐ Website Development</span>
@@ -259,27 +162,31 @@ footer{
 
 <section class="section" id="contact">
 <div class="contact-section">
+
+<!-- Contact LEFT -->
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+<input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send</button>
+</form>
+
+<!-- Social RIGHT -->
+<div class="contact-details">
 <h2>Contact Me</h2>
-  <h3>Let's Work Together </h3>
 <p>Email: jaferabdella674@gmail.com</p>
 <p>Phone: +252637219188</p>
 <p>Location: Hargeisa</p>
 
-<form action="https://api.web3forms.com/submit" method="POST"class= "contact-form" >
-<input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
-<input type="text" name="name" placeholder="Your Name*" required>
-<input type="email" name="email" placeholder="Your Email*" required>
-<textarea name="message" placeholder="Your Message*" required></textarea>
-<button type="submit">Send</button>
-</form>
-
 <div class="social-icons">
-<a href="mailto:jaferabdella674@gmail.com">✉️ Email</a>
+<a href="mailto:jaferabdella674@gmail.com">✉ Email</a>
 <a href="https://wa.me/252637219188">📱 WhatsApp</a>
 <a href="https://t.me/jaferAbdella">📨 Telegram</a>
 <a href="https://www.facebook.com/JaferAbdella90">📘 Facebook</a>
-<a href="tel:+252637219188">📞 Call</a>
 </div>
+</div>
+
 </div>
 </section>
 
@@ -290,26 +197,18 @@ footer{
 <button id="topBtn" onclick="topFunction()">↑</button>
 
 <script>
-function toggleMode(){
- document.body.classList.toggle("dark");
-}
+function toggleMode(){document.body.classList.toggle("dark");}
+
+function toggleMenu(){document.getElementById("navbar").classList.toggle("active");}
 
 let btn=document.getElementById("topBtn");
 window.onscroll=function(){
- if(document.documentElement.scrollTop>200){
-  btn.style.display="block";
- }else{
-  btn.style.display="none";
- }
+ if(document.documentElement.scrollTop>200){btn.style.display="block";}
+ else{btn.style.display="none";}
 }
 
-function topFunction(){
- window.scrollTo({top:0,behavior:"smooth"});
-}
+function topFunction(){window.scrollTo({top:0,behavior:"smooth"});}
 </script>
 
 </body>
 </html>
-
-
-
