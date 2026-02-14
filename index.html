@@ -110,7 +110,15 @@ nav a:hover{
   color:white;
   font-weight:bold;
 }
-
+/* PROFILE-PHOTO*/
+  profile-photo{
+    width:150px;
+    height:150px;
+    border-radius:50%
+      object-fit:cover;
+    maargin: auto;
+    display: block;
+  }
 @keyframes scroll-left{
   0%{transform:translateX(0);}
   100%{transform:translateX(-50%);}
@@ -204,7 +212,7 @@ footer{
 <header>
 
   <!-- LOGO LEFT -->
-  <img src="images/IMG_202512355_082354109.png" class="logo" alt="Logo">
+  <img src="images/logo.png" class="logo" alt="Logo">
 
   <!-- CENTER TITLE -->
   <div class="header-center">
@@ -239,7 +247,11 @@ footer{
     <span>⭐ Welcome to Jafer Media</span>
   </div>
 </div>
-
+.<!--home- profile-->
+  <section class="section" id=" home">
+    <img scr="images/myphoto.jpg" class=" profile-photo"
+      alt="profile-photo">
+  </section>
 <section class="section" id="about">
   <h2>About Me</h2>
   <p>I am Jafer Abdella, graphic designer and web developer.</p>
@@ -299,3 +311,4 @@ function toggleMenu(){
 
 </body>
 </html>
+
