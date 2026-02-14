@@ -9,14 +9,8 @@
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
-body{
-  background:#555;
-  line-height:1.6;
-}
-.dark{
-  background:#121212;
-  color:white;
-}
+body{background:#555;line-height:1.6;}
+.dark{background:#121212;color:white;}
 
 /* HEADER */
 header{
@@ -26,7 +20,6 @@ header{
   padding:15px 20px;
 }
 
-/* LOGO */
 .logo{
   width:50px;
   height:50px;
@@ -37,26 +30,12 @@ header{
 }
 
 /* TITLE CENTER */
-.header-center{
-  flex:1;
-  text-align:center;
-}
-.header-title{
-  font-size:28px;
-  color:white;
-  font-weight:bold;
-}
-.tagline{
-  font-size:14px;
-  color:#ddd;
-}
+.header-center{flex:1;text-align:center;}
+.header-title{font-size:28px;color:white;font-weight:bold;}
+.tagline{font-size:14px;color:#ddd;}
 
-/* BUTTONS RIGHT */
-.header-controls{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
+/* BUTTONS */
+.header-controls{display:flex;gap:10px;align-items:center;}
 
 .dark-mode-btn{
   background:#d50998;
@@ -67,30 +46,17 @@ header{
   cursor:pointer;
   font-weight:bold;
 }
-.dark-mode-btn:hover{
-  background:#93016a;
-}
+.dark-mode-btn:hover{background:#93016a;}
 
-.menu-btn{
-  font-size:26px;
-  color:white;
-  cursor:pointer;
-}
+.menu-btn{font-size:26px;color:white;cursor:pointer;}
 
 /* NAV */
-nav{
-  background:#93016a;
-  padding:5px;
-  text-align:center;
-}
+nav{background:#93016a;padding:5px;text-align:center;}
 nav a{
   color:white;
-  margin:10px 0;
+  margin:10px;
   text-decoration:none;
   font-weight:bold;
-}
-nav a:hover{
-  color:#93016a;
 }
 
 /* SCROLL TEXT */
@@ -99,7 +65,6 @@ nav a:hover{
   padding:15px;
   overflow:hidden;
   white-space:nowrap;
-
 }
 .scroll-content{
   display:inline-block;
@@ -110,46 +75,41 @@ nav a:hover{
   color:white;
   font-weight:bold;
 }
-/* PROFILE-PHOTO*/
-  profile-photo{
-    width:150px;
-    height:150px;
-    border-radius:50%
-      object-fit:cover;
-    maargin: auto;
-    display: block;
-  }
+
 @keyframes scroll-left{
   0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
+  100%{transform:translateX(-60%);}
+}
+
+/* PROFILE PHOTO */
+.profile-photo{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:20px auto;
+  display:block;
 }
 
 /* SECTIONS */
-.section{
-  padding:50px 20px;
-  text-align:center;
-}
+.section{padding:50px 20px;text-align:center;}
 
-/* SERVICES */
 .services{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 .card{
-  background:white;
-  padding:20px;
-  border-radius:10px;
+background-color: #474747;
+color: #ccc;
+  padding:15px;
+  margin: 5px;
+  border-radius: 5px;
   font-weight:bold;
-  transition:.3s;
+  transition: 3s;
 }
-.card:hover{
-  transform:translateY(-6px);
-}
-.dark .card{
-  background:#1f1f1f;
-  color:white;
-}
+.card:hover{transform:translateY(-6px);}
+.dark .card{background:#4d0040;color:white;}
 
 /* CONTACT */
 .contact-section{
@@ -157,11 +117,11 @@ nav a:hover{
   gap:20px;
   flex-wrap:wrap;
   justify-content:space-between;
-  color: white;
- 
+  color:white;
 }
 .contact-form input,
 .contact-form textarea{
+    background-color: #474747;
   width:100%;
   padding:10px;
   margin-bottom:8px;
@@ -185,11 +145,8 @@ nav a:hover{
   margin:5px;
   display:inline-block;
 }
-.social-icons a:hover{
-  background:#93016a;
-}
+.social-icons a:hover{background:#93016a;}
 
-/* FOOTER */
 footer{
   background:#111;
   color:white;
@@ -210,65 +167,60 @@ footer{
 <body>
 
 <header>
+<img src="images/logo.png" class="logo" alt="Logo">
 
-  <!-- LOGO LEFT -->
-  <img src="images/logo.png" class="logo" alt="Logo">
+<div class="header-center">
+<div class="header-title">Jafer Media</div>
+<p class="tagline">
+We create logos, posters, websites, and social media designs.
+</p>
+</div>
 
-  <!-- CENTER TITLE -->
-  <div class="header-center">
-    <div class="header-title">Jafer Media</div>
-    <p class="tagline">
-      We create logos, posters, websites, and social media designs.
-    </p>
-  </div>
-
-  <!-- RIGHT BUTTONS -->
-  <div class="header-controls">
-    <button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  </div>
-
+<div class="header-controls">
+<button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
 </header>
 
 <nav id="navbar">
-  <a href="#about">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <div class="horizontal-scroll">
-  <div class="scroll-content">
-    <span>⭐ Welcome to Jafer Media</span>
-    <span>⭐ Graphic Design</span>
-    <span>⭐ Website Development</span>
-    <span>⭐ Logo & Poster Design</span>
-    <span>⭐ Social Media Content</span>
-    <span>⭐ Welcome to Jafer Media</span>
-  </div>
+<div class="scroll-content">
+<span>⭐ Welcome to Jafer Media</span>
+<span>⭐ Graphic Design</span>
+<span>⭐ Website Development</span>
+<span>⭐ Logo & Poster Design</span>
+<span>⭐ Social Media Content</span>
 </div>
-.<!--home- profile-->
-  <section class="section" id=" home">
-    <img scr="images/myphoto.jpg" class=" profile-photo"
-      alt="profile-photo">
-  </section>
+</div>
+
+<!-- HOME PROFILE  -->
+<section class="section" id="home">
+<img src="images/myphoto.jpg" class="profile-photo" alt="profile-Photo">
+</section>
+
 <section class="section" id="about">
-  <h2>About Me</h2>
-  <p>I am Jafer Abdella, graphic designer and web developer.</p>
+<h2>About Me</h2>
+<p>I am Jafer Abdella, graphic designer and web developer.</p>
 </section>
 
 <section class="section" id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">Logo Design</div>
-    <div class="card">Photo Editing</div>
-    <div class="card">Website Design</div>
-    <div class="card">Social Media Content</div>
-  </div>
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">Logo Design</div>
+<div class="card">Photo Editing</div>
+<div class="card">Website Design</div>
+<div class="card">Social Media Content</div>
+</div>
 </section>
 
 <section class="section" id="contact">
-  <div class="contact-section">
+<div class="contact-section">
 
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 <input type="hidden" name="access_key" value="YOUR_KEY">
@@ -292,7 +244,7 @@ footer{
 </div>
 </div>
 
-  </div>
+</div>
 </section>
 
 <footer>
@@ -301,14 +253,13 @@ footer{
 
 <script>
 function toggleMode(){
-  document.body.classList.toggle("dark");
+document.body.classList.toggle("dark");
 }
 
 function toggleMenu(){
-  document.getElementById("navbar").classList.toggle("active");
+document.getElementById("navbar").classList.toggle("active");
 }
 </script>
 
 </body>
 </html>
-
