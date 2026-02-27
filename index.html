@@ -3,455 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jafer Media</title>
+<title>Jafer Media - Ultimate Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-html{scroll-behavior:smooth;}
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#121212;color:white;overflow-x:hidden;transition:background 0.3s;}
+body.dark{background:black;}
 
-body{
-  background:#2f4f4f;
-  line-height:1.6;
-}
-.dark{
-  background:#121212;
-  color:white;
-}
+/* ===== LOADER ===== */
+#loader{position:fixed;top:0;left:0;width:100%;height:100vh;background:#121212;display:flex;align-items:center;justify-content:center;z-index:9999;}
+.spinner{width:60px;height:60px;border:6px solid #444;border-top:6px solid #4d0040;border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 
-/* LOADER */
-#loader{
-  position:fixed;
-  width:100%;
-  height:100vh;
-  background:#121212;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
+/* ===== HEADER ===== */
+header{display:flex;justify-content:space-between;align-items:center;padding:20px;position:absolute;top:0;background:rgba(18,18,18,0.85);backdrop-filter:blur(5px);z-index:999;}
+.logo{width:50px;height:50px;border-radius:25%;}
+.header-title{font-size:28px;font-weight:bold;}
+.tagline{font-size:14px;color:#ccc;}
+.header-controls{display:flex;gap:10px;align-items:center;}
+.dark-mode-btn{background:#ee69;color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-weight:bold;transition:0.3s;}
+.dark-mode-btn:hover{background:#93016a;}
+.menu-btn{font-size:26px;cursor:pointer;}
 
-.spinner{
-  width:60px;
-  height:60px;
-  border:6px solid #444;
-  border-top:6px solid #778899;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-}
+/* ===== NAVIGATION ===== */
+nav{background:#93016a;text-align:center;padding:10px;transition:transform 0.4s ease-in-out, opacity 0.4s ease;}
+nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold;}
+nav a:hover{color:#00ffff;}
+nav.active{transform:translateY(0);opacity:1;pointer-events:auto;}
 
-@keyframes spin{
-  0%{transform:rotate(0);}
-  100%{transform:rotate(360deg);}
-}
+/* ===== HORIZONTAL SCROLL ===== */
+.horizontal-scroll{background:#4d0040;padding:15px;overflow:hidden;white-space:nowrap;margin:30px 0; }
+.scroll-content{display:inline-block;animation:scroll-left 18s linear infinite;}
+.scroll-content span{margin:0 25px;color:white;font-weight:bold;}
+.scroll-content:hover{animation-play-state:paused;}
+@keyframes scroll-left{0%{transform:translateX(0%);}100%{transform:translateX(-60%);}}
 
-/* HEADER */
-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:20px;
-}
+/* ===== SECTIONS ===== */
+.section{padding:50px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:all 1s ease-in-out;}
+.section.visible{opacity:1;transform:translateY(0);}
+.profile-photo{width:200px;height:200px;border-radius:25%;border:4px solid #111;margin:20px auto;object-fit:cover;}
+.glass{background: rgba(17, 7, 7, 0.15);backdrop-filter: blur(12px);border-radius:15px;border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(205, 57, 57, 0.25);padding:20px;position:relative;}
 
-/* LOGO */
-.logo{
-  width:50px;
-  height:50px;
-  object-fit:contain;
-  border-radius:30px;
-  background:#ee0e0;
-  padding:5px;
-}
-
-/* TITLE CENTER */
-.header-center{
-  flex:1;
-  text-align:center;
-}
-.header-title{
-  font-size:28px;
-  color:white;
-  font-weight:bold;
-}
-.tagline{
-  font-size:14px;
-  color:#ddd;
-}
-
-/* BUTTONS */
-.header-controls{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-.dark-mode-btn{
-  background:#000;
-  color:white;
-  border:none;
-  padding:8px 12px;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:bold;
-}
-.dark-mode-btn:hover{
-  background:#93016a;
-}
-.menu-btn{
-  font-size:26px;
-  color:white;
-  cursor:pointer;
-}
-
-/* NAV */
-nav{
-  background:#93016a;
-  padding:10px;
-  text-align:center;
-}
-nav a{
-  color:white;
-  margin:0 10px;
-  text-decoration:none;
-  font-weight:bold;
-}
-nav a:hover{
-  color:rgb(25, 25, 30);
-}
-
-/* SCROLL TEXT */
-.horizontal-scroll{
-  background:#4d0040;
-  padding:15px;
-  overflow:hidden;
-  white-space:nowrap;
-margin: 30px 0 ;
-}
-.scroll-content{
-  display:inline-block;
-  animation:scroll-left 18s linear infinite;
-}
-.scroll-content span{
-  margin:0 25px;
-  color:white;
-  font-weight:bold;
-}
-@keyframes scroll-left{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-60%);}
-
-/* PROFILE PHOTO */
+/*====PROFILE === */
 .profile-photo{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  display:block;
-  margin:20px auto;
-  border-radius:25%;
-  border: 4px solid #2f4f4f;
-}
-
-/* SECTIONS */
-.section{
-  padding:50px 20px;
-  text-align:center;
-  color:white;
-}
-
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.card{
-  background:#474747;
-  color:#ccc;
-  padding:15px;
-  border-radius:8px;
-  font-weight:bold;
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-}
-.dark .card{
-  background:#4d0040;
-  color:white;
-}
-
-/* CONTACT */
-.contact-section{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  color:white;
-}
-.contact-form input,
-.contact-form textarea{
-  background:#474747;
-  width:100%;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius:8px;
-  border: 2px solid #ccc;
-  color:white;
-}
-.contact-form button{
-  background:#111;
-  color:white;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* SOCIAL */
-.social-icons a{
-  background: #4b0082;
-  color:white;
-  padding:8px 15px;
-  border-radius:20px;
-  text-decoration:none;
-  margin:5px;
-  display:inline-block;
-}
-.social-icons a:hover{
-  background:#93016a;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  object-fit: cover;
+  margin-top: 20px;
 
 }
-/* ===== 3D CAROUSEL ===== */
 
-.carousel-wrapper{
-  text-align:center;
-  margin-top:60px;
-}
+/* ===== SERVICES CARDS ===== */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.card{background:rgba(255,255,255,0.05);padding:15px;border-radius:15px;font-weight:bold;position:relative;overflow:hidden;transition:0.3s;cursor:pointer;}
+.card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(#0ff,#f0f,#ff0,#0ff);animation:spin-border 4s linear infinite;z-index:0;}
+.card *{position:relative;z-index:1;}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 25px #0ff;}
+@keyframes spin-border{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 
-.carousel{
-  position:relative;
-  width:260px;
-  height:200px;
-  margin:60px auto;
-  transform-style:preserve-3d;
-  animation:spin 14s linear infinite;
-}
-
-.carousel-card{
+/* ===== CARD PREVIEW ===== */
+.card-preview{
   position:absolute;
-  width:220px;
-  height:130px;
-  background:#4b0082;
+  top:-50px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,255,255,0.2);
   color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  border-radius:15px;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:12px;
   font-weight:bold;
-  box-shadow:0 0 20px rgba(0,0,0,.5);
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.3s, transform 0.3s;
 }
 
-/* 3D positions */
-.carousel-card:nth-child(1){
-  transform:rotateY(0deg) translateZ(220px);
-}
-.carousel-card:nth-child(2){
-  transform:rotateY(90deg) translateZ(220px);
-}
-.carousel-card:nth-child(3){
-  transform:rotateY(180deg) translateZ(220px);
-}
-.carousel-card:nth-child(4){
-  transform:rotateY(270deg) translateZ(220px);
-}
+/* ===== 3D CAROUSEL ===== */
+.carousel-wrapper{text-align:center;margin-top:60px;}
+.carousel{position:relative;width:260px;height:200px;margin:60px auto;transform-style:preserve-3d;cursor:grab;}
+.carousel-card{position:absolute;width:220px;height:130px;background:rgba(255,255,255,0.1);display:flex;justify-content:center;align-items:center;border-radius:15px;font-weight:bold;box-shadow:0 0 20px rgba(0,255,255,.5);transition:transform 0.3s;}
+.carousel-card:nth-child(1){transform:rotateY(0deg) translateZ(220px);}
+.carousel-card:nth-child(2){transform:rotateY(90deg) translateZ(220px);}
+.carousel-card:nth-child(3){transform:rotateY(180deg) translateZ(220px);}
+.carousel-card:nth-child(4){transform:rotateY(270deg) translateZ(220px);}
+.carousel-card:hover{transform:translateZ(250px) rotateY(0deg) scale(1.05);box-shadow:0 0 25px #0ff;}
 
-/* animation */
-@keyframes spin{
-  from{transform:rotateY(0deg);}
-  to{transform:rotateY(360deg);}
-}
+/* ===== CONTACT FORM ===== */
+.contact-section{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;color:white;}
+.contact-form input,.contact-form textarea{background:rgba(255,255,255,0.05);width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:2px solid #00ffff;color:white;}
+.contact-form button{background:#ee69;color:#121212;padding:10px;border:none;border-radius :10px;cursor:pointer;transition:0.3s;}
+.contact-form button:hover{box-shadow:0 0 12px #ff0000;transform:translateY(-3px);}
 
-/* dark mode */
-.dark .carousel-card{
-  background:#4d0040;
-}
+/* ===== SOCIAL ICONS ===== */
+.social-icons{text-align:center;margin-top:20px;}
+.social-icons a{background:#4d0040;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;margin:6px;display:inline-block;transition:0.3s;font-weight:bold;}
+.social-icons a:hover{background:#93016a;transform:translateY(-5px);box-shadow:0 0 12px #0ff;}
+.dark .social-icons a{background:#1e1e1e;color:#0ff;border:1px solid #0ff;}
 
-/* FOOTER */
-footer{
-  background:#111;
-  color:white;
-  padding:20px;
-  text-align:center;
-  margin-top:60px;
-}
+/* ===== FOOTER ===== */
+footer{background:#111;color:white;padding:20px;text-align:center;margin-top:80px; }
 
-/* MOBILE */
-@media(max-width:768px){
-  nav{display:none;}
-  nav.active{display:block;}
-  nav a{display:block;margin:10px 0;}
+/* ===== CURSOR ===== */
+.cursor{width:15px;height:15px;border:2px solid #0ff;border-radius:50%;position:absolute;pointer-events:none;mix-blend-mode:difference;transition:transform 0.1s linear;}
+#particles-js{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:#121212;}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTopBtn{position: fixed; bottom: 40px; right: 40px; background:#00f; border:none; padding:10px 15px; border-radius:50%; cursor:pointer; display:none; font-weight:bold; z-index:999;}
+#scrollTopBtn:hover{box-shadow:0 0 12px #0ff; transform:translateY(-3px);}
+
+/* ===== MEDIA ===== */
+@media (max-width:678px){
+nav{display:flex;flex-direction:column;background:#111;width:100%;position:absolute;top:80px;left:0;padding:15px 0;transform:translateY(-120%);opacity:0;pointer-events:none;}
+nav a{display:block;margin:12px 0;font-size:18px;}
 }
 </style>
 </head>
-
 <body>
 
-<!-- LOADING SCREEN -->
-<div id="loader">
-  <div class="spinner"></div>
-</div>
+<canvas id="canvas"></canvas>
+<div id="particles-js"></div>
+<div id="loader"><div class="spinner"></div></div>
 
 <header>
-<img src="images/logo.png" class="logo" alt="Logo">
-
-<div class="header-center">
-<div class="header-title">Jafer Media</div>
-<p class="tagline">
-We create logos, posters, websites, and social media designs.
-</p>
-</div>
-
-<div class="header-controls">
-<button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
+  <img src="images/logo.png" class="logo" alt="Logo">
+  <div>
+    <div class="header-title">Jafer Media</div>
+    <p class="tagline">We create logos, posters, websites, and social media designs.</p>
+  </div>
+  <div class="header-controls">
+    <button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
+    <div class="menu-btn">☰</div>
+  </div>
 </header>
 
 <nav id="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services">Services</a>
-<a href="contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <div class="horizontal-scroll">
-<div class="scroll-content">
-<span>⭐ Welcome to Jafer Media</span>
-<span>⭐ Graphic Design</span>
-<span>⭐ Website Development</span>
-<span>⭐ Logo & Poster Design</span>
-<span>⭐ Social Media Content</span>
-</div>
+  <div class="scroll-content">
+    <span>⭐ Welcome to Jafer Media</span>
+    <span>⭐ Graphic Design</span>
+    <span>⭐ Website Development</span>
+    <span>⭐ Logo & Poster Design</span>
+    <span>⭐ Social Media Content</span>
+  </div>
 </div>
 
 <section class="section" id="home">
-<img src="images/myphoto.jpg" class="profile-photo" alt="Profile Photo">
+  <img src="images/myphoto.jpg" class="profile-photo" alt="Profile Photo">
 </section>
 
 <section class="section" id="about">
-<h2>About Me</h2>
-<p>I am Jafer Abdella, graphic designer and web developer.</p>
+  <h2>About Me</h2>
+  <p>I am Jafer Abdella, graphic designer and web developer.</p>
 </section>
 
 <section class="section" id="services">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">Logo Design</div>
-<div class="card">Photo Editing</div>
-<div class="card">Website Design</div>
-<div class="card">Social Media Content</div>
-</div>
-<!-- 3D CAROUSEL -->
-<div class="carousel-wrapper">
-
-<h2>My Works</h2>
-<p> Let's Work Together!</p>
-<p>Explore some of my recent projects in this interactive 3D carousel.</p>
-<div class="carousel">
-  <div class="carousel-card">Logo Design</div>
-  <div class="carousel-card">Poster Design</div>
-  <div class="carousel-card">Website Design</div>
-  <div class="carousel-card">Social Media</div>
-</div>
-
-</div>
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card glass">Logo Design<div class="card-preview">Preview: Logo Design</div></div>
+    <div class="card glass">Photo Editing<div class="card-preview">Preview: Photo Editing</div></div>
+    <div class="card glass">Website Design<div class="card-preview">Preview: Website Design</div></div>
+    <div class="card glass">Social Media Content<div class="card-preview">Preview: Social Media Content</div></div>
+  </div>
+  <h2>My Works</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-card">Logo Design</div>
+      <div class="carousel-card">Poster Design</div>
+      <div class="carousel-card">Website Design</div>
+      <div class="carousel-card">Social Media</div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="contact">
-<div class="contact-section">
+  <div class="contact-section">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div>
+      <h2>Contact Me</h2>
+      <p>Email: Jaferabdella674@gmail.com</p>
+      <p>Phone: +252 63 721 9188</p>
+      <p>Location: Hargeisa, Somaliland.</p>
+    </div>
+  </div>
 
-<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-<<<<<<< HEAD
-<input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
-=======
-<input type="hidden" name="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
->>>>>>> a3d791ed0d476283f20dec5145eaf3eaa184495f
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message"></textarea>
-<button type="submit">Send</button>
-</form>
-
-<div>
-<h2>Contact Me</h2>
-<p>Email: jaferabdella674@gmail.com</p>
-<p>Phone: +252 63 721 9188</p>
-<p>Location: Hargeisa</p>
-
-<div class="social-icons">
-<a href="mailto:jaferabdella674@gmail.com">Email</a>
-<a href="https://wa.me/252637219188">WhatsApp</a>
-<a href="https://t.me/jaferabdella">Telegram</a>
-<a href="https://www.facebook.com/jafer.abdella90">Facebook</a>
-</div>
-</div>
-
-</div>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/jafer.abdella90" target="_blank">Facebook</a>
+    <a href="https://t.me/jaferabdella" target="_blank">Telegram</a>
+    <a href="mailto:jaferabdella674@gmail.com" target="_blank">Email</a>
+    <a href="https://wa.me/+252637219188" target="_blank">WhatsApp</a>
+  </div>
 </section>
 
-<footer>
-© 2026 Jafer Abdella | All Rights Reserved
-</footer>
+<footer>© 2026 Jafer Abdella | All Rights Reserved</footer>
+<button id="scrollTopBtn">↑</button>
+<div class="cursor" id="cursor"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-const carousel = document.querySelector(".carousel");
+// Loader
+window.addEventListener('load',()=>{document.getElementById('loader').style.display='none';});
 
-if(carousel){
+// Sections fadein
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.2});
+sections.forEach(sec=>observer.observe(sec));
 
-let isDragging = false;
-let startX;
-let currentRotate = 0;
-
-carousel.addEventListener("mousedown",(e)=>{
-  isDragging = true;
-  startX = e.clientX;
-});
-
-document.addEventListener("mouseup",()=>{
-  isDragging = false;
-});
-
-document.addEventListener("mousemove",(e)=>{
-  if(!isDragging) return;
-
-  let moveX = e.clientX - startX;
-  currentRotate += moveX * 0.3;
-
-  carousel.style.transform =
-    `rotateY(${currentRotate}deg)`;
-
-  startX = e.clientX;
-});
-
-/* MOBILE */
-carousel.addEventListener("touchstart",(e)=>{
-  startX = e.touches[0].clientX;
-});
-
-carousel.addEventListener("touchmove",(e)=>{
-  let moveX = e.touches[0].clientX - startX;
-  currentRotate += moveX * 0.3;
-
-  carousel.style.transform =
-    `rotateY(${currentRotate}deg)`;
-
-  startX = e.touches[0].clientX;
-});
-
+// Dark mode toggle
+function toggleMode(){
+    document.body.classList.toggle('dark');
+    const btn = document.querySelector('.dark-mode-btn');
+    btn.textContent = document.body.classList.contains('dark') ? "Jafer A" : "Dark Mode";
 }
+
+// Mobile menu toggle
+const menuBtn = document.querySelector('.menu-btn');
+menuBtn.addEventListener('click', () => {document.getElementById('navbar').classList.toggle('active');});
+
+// Neon cursor
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
+
+// Card hover previews
+const cards = document.querySelectorAll('.card');
+cards.forEach(card=>{
+    const preview = card.querySelector('.card-preview');
+    card.addEventListener('mouseenter',()=>{preview.style.opacity=1; preview.style.transform='translate(-50%,-10px)';});
+    card.addEventListener('mouseleave',()=>{preview.style.opacity=0; preview.style.transform='translate(-50%,-50px)';});
+});
+
+// 3D carousel drag + auto spin
+const carousel=document.querySelector(".carousel");
+let isDragging=false,startX,currentRotate=0,carouselSpeed=0.2;
+if(carousel){
+  carousel.addEventListener("mousedown",e=>{isDragging=true;startX=e.clientX;});
+  document.addEventListener("mouseup",()=>{isDragging=false;});
+  document.addEventListener("mousemove",e=>{
+    if(!isDragging) return;
+    let moveX=e.clientX-startX;
+    currentRotate+=moveX*0.3;
+    carousel.style.transform=`rotateY(${currentRotate}deg)`;
+    startX=e.clientX;
+  });
+  carousel.addEventListener("touchstart",e=>{startX=e.touches[0].clientX;});
+  carousel.addEventListener("touchmove",e=>{
+    let moveX=e.touches[0].clientX-startX;
+    currentRotate+=moveX*0.3;
+    carousel.style.transform=`rotateY(${currentRotate}deg)`;
+    startX=e.touches[0].clientX;
+  });
+}
+function animateCarousel(){
+    if(!isDragging){currentRotate+=carouselSpeed; carousel.style.transform=`rotateY(${currentRotate}deg)`;}
+    requestAnimationFrame(animateCarousel);
+}
+animateCarousel();
+
+// Particles background
+particlesJS("particles-js",{particles:{number:{value:60},color:{value:"#0ff"},shape:{type:"circle"},opacity:{value:0.5},size:{value:3},line_linked:{enable:true,color:"#0ff"}},interactivity:{detect_on:"canvas",events:{onhover:{enable:true,mode:"grab"}}}});
+
+// Canvas particle effect
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let mouse={x:canvas.width/2,y:canvas.height/2};
+const particles=[];
+class Particle{
+  constructor(x,y){
+    this.x=x; this.y=y; this.size=Math.random()*5+1;
+    this.speedX=Math.random()*3-1.5; this.speedY=Math.random()*3-1.5;
+    this.color=`hsl(${Math.random()*360},100%,50%)`;
+  }
+  update(){this.x+=this.speedX; this.y+=this.speedY; this.size*=0.96;}
+  draw(){ctx.fillStyle=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill();}
+}
+window.addEventListener("mousemove",(e)=>{
+  mouse.x=e.x; mouse.y=e.y;
+  for(let i=0;i<5;i++){particles.push(new Particle(mouse.x,mouse.y));}
+});
+function animate(){
+  ctx.fillStyle="rgba(0,0,0,0.2)"; ctx.fillRect(0,0,canvas.width,canvas.height);
+  for(let i=0;i<particles.length;i++){
+    particles[i].update(); particles[i].draw();
+    if(particles[i].size<0.5){particles.splice(i,1);i--;}
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Scroll-to-top button
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', ()=>{scrollBtn.style.display = window.scrollY>300?'block':'none';});
+scrollBtn.addEventListener('click', ()=>{window.scrollTo({top:0,behavior:'smooth'});});
 </script>
 </body>
 </html>
