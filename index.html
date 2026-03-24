@@ -3,188 +3,716 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jafer Media - Ultimate Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<title>Jafer Media - Portfolio</title>
+<script src="https://kit.fontawesome.com/5113809e83.js" crossorigin="anonymous"></script>
 <style>
-/* ===== RESET & BASE ===== */
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{background:#121212;color:white;overflow-x:hidden;transition:background 0.3s;}
-body.dark{background:black;}
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif;}
+body {background: #1a1a1a;; color:white; line-height:1.6; overflow-x: hidden;}
 
-/* ===== LOADER ===== */
-#loader{position:fixed;top:0;left:0;width:100%;height:100vh;background:#121212;display:flex;align-items:center;justify-content:center;z-index:9999;}
-.spinner{width:60px;height:60px;border:6px solid #444;border-top:6px solid #4d0040;border-radius:50%;animation:spin 1s linear infinite;}
-@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+/* HEADER */
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 20px; background:#1e293b; position:fixed; width:100%; top:0; z-index:1;
+}
+header .logo {width:50px; height:50px; border-radius:25px; 
+  margin-right: auto;
+}
+/* ===== NAV LINKS ===== */
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 6px;
+  font-weight: bold;
+}
 
-/* ===== HEADER ===== */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px;position:absolute;top:0;background:rgba(18,18,18,0.85);backdrop-filter:blur(5px);z-index:999;}
-.logo{width:50px;height:50px;border-radius:25%;}
-.header-title{font-size:28px;font-weight:bold;}
-.tagline{font-size:14px;color:#ccc;}
-.header-controls{display:flex;gap:10px;align-items:center;}
-.dark-mode-btn{background:#ee69;color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-weight:bold;transition:0.3s;}
-.dark-mode-btn:hover{background:#93016a;}
-.menu-btn{font-size:26px;cursor:pointer;}
+header nav a:hover {
+  color: #38bdf8;
+}
 
-/* ===== NAVIGATION ===== */
-nav{background:#93016a;text-align:center;padding:10px;transition:transform 0.4s ease-in-out, opacity 0.4s ease;}
-nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold;}
-nav a:hover{color:#00ffff;}
-nav.active{transform:translateY(0);opacity:1;pointer-events:auto;}
 
-/* ===== HORIZONTAL SCROLL ===== */
-.horizontal-scroll{background:#4d0040;padding:15px;overflow:hidden;white-space:nowrap;margin:30px 0; }
+/* ===== MENU BUTTON ===== */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  display: block;
+  color: white;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  z-index: 999;
+}
+
+/* ===== ICONS ===== */
+.menu-btn .menu-open {
+  display: inline-block;
+}
+
+.menu-btn .menu-close {
+  display: none;
+}
+
+/* ===== HIDE CHECKBOX ===== */
+#menu-toggle {
+  display: none;
+}
+
+/* ===== TOGGLE ICON CHANGE ===== */
+#menu-toggle:checked + .menu-btn .menu-open {
+  display: none;
+}
+
+#menu-toggle:checked + .menu-btn .menu-close {
+  display: inline-block;
+}
+
+/* ===== NAV DEFAULT ===== */
+.nav {
+  display:flex;
+  justify-content: center;
+  flex-direction: calc();
+  gap: 10px;
+  margin: 10px;
+  width: 50%;
+ 
+}
+#menu-toggle:checked ~ .nav {
+  transform: translateY(-120%);
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+
+}
+/* HERO */
+.hero{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 20px 40px;
+  gap: 40px;
+  min-height: 100vh;
+}
+
+/* LEFT */
+.hero-left{
+ display: block;
+}
+
+/* TITLE */
+.hero-title{
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.hero-title span{
+  color: #ff8800;
+}
+
+/* TEXT */
+.hero-left p{
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+  /* BUTTONS */
+.btn{
+  background: #4d0040;
+  padding: 10px 20px;
+  color: wheat;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.hero-pill{
+  display: inline-block;
+  background: #ff8800; 
+  color: white;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+/* META */
+.hero-meta{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+}
+
+.meta-box{
+
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.meta-box strong{
+  color: #ff8800;
+  font-size: 18px;
+  display: block;
+}
+
+.meta-box span{
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* RIGHT */
+.hero-right{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE */
+.hero-img-wrap{
+ background: transparent;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.hero-img-placeholder{
+  background: #ee6983;
+  padding: 10px;
+  border-radius: 70px;
+}
+
+.hero-img-placeholder img{
+
+  width: 90%;
+  max-width: 260px;
+  border-radius:30px;
+}
+
+
+/* SECTIONS */
+section {padding:10px 20px 50px; text-align:center;}
+
+.horizontal-scroll{background:#4d0040;padding:15px;  border-bottom:4px solid #fff; border-top:4px solid #fff;    overflow:hidden;white-space:nowrap;
+position: relative;
+}
 .scroll-content{display:inline-block;animation:scroll-left 18s linear infinite;}
-.scroll-content span{margin:0 25px;color:white;font-weight:bold;}
-.scroll-content:hover{animation-play-state:paused;}
-@keyframes scroll-left{0%{transform:translateX(0%);}100%{transform:translateX(-60%);}}
+.scroll-content span{margin: 0 20px;color:white;font-weight:bold;}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-60%);}}
 
-/* ===== SECTIONS ===== */
-.section{padding:50px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:all 1s ease-in-out;}
-.section.visible{opacity:1;transform:translateY(0);}
-.profile-photo{width:200px;height:200px;border-radius:25%;border:4px solid #111;margin:20px auto;object-fit:cover;}
-.glass{background: rgba(17, 7, 7, 0.15);backdrop-filter: blur(12px);border-radius:15px;border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(205, 57, 57, 0.25);padding:20px;position:relative;}
+.scroll-item {
+  flex:0 0 auto; padding:15px 25px; background:#1e1e1e; border-radius:12px; font-weight:bold;
+}
 
-/*====PROFILE === */
-.profile-photo{
-  width: 200px;
-  height: 200px;
-  border-radius: 40px;
-  object-fit: cover;
-  margin-top: 20px;
+  .contact {
+  
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+/* SERVICES CARDS */
+.services {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px; margin-top:20px;
+}
+.card {
+  background:rgba(255,255,255,0.05); padding:15px;margin: 20px; border-radius:50px; font-weight:bold;  
+}
+
+/* PROJECTS */
+.project-container {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;}
+.project-card { border-radius:12px; overflow:hidden;}
+.project-card img {width:70%; height:60%; object-fit:cover;}
+.project-card h3 {margin:10px 0 5px;}
+.project-card p {font-size:14px; color:#ccc; padding:0 10px;}
+
+   /* ABOUT SECTION */
+.about-section{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 80%;
+gap: 30px;
+padding: 30px;
+margin: 30px auto;
 
 }
 
-/* ===== SERVICES CARDS ===== */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.card{background:rgba(255,255,255,0.05);padding:15px;border-radius:15px;font-weight:bold;position:relative;overflow:hidden;transition:0.3s;cursor:pointer;}
-.card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(#0ff,#f0f,#ff0,#0ff);animation:spin-border 4s linear infinite;z-index:0;}
-.card *{position:relative;z-index:1;}
-.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 25px #0ff;}
-@keyframes spin-border{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-
-/* ===== CARD PREVIEW ===== */
-.card-preview{
-  position:absolute;
-  top:-50px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,255,255,0.2);
-  color:white;
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:12px;
-  font-weight:bold;
-  pointer-events:none;
-  opacity:0;
-  transition:opacity 0.3s, transform 0.3s;
+/* LEFT */
+.about-left{
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-/* ===== 3D CAROUSEL ===== */
-.carousel-wrapper{text-align:center;margin-top:60px;}
-.carousel{position:relative;width:260px;height:200px;margin:60px auto;transform-style:preserve-3d;cursor:grab;}
-.carousel-card{position:absolute;width:220px;height:130px;background:rgba(255,255,255,0.1);display:flex;justify-content:center;align-items:center;border-radius:15px;font-weight:bold;box-shadow:0 0 20px rgba(0,255,255,.5);transition:transform 0.3s;}
-.carousel-card:nth-child(1){transform:rotateY(0deg) translateZ(220px);}
-.carousel-card:nth-child(2){transform:rotateY(90deg) translateZ(220px);}
-.carousel-card:nth-child(3){transform:rotateY(180deg) translateZ(220px);}
-.carousel-card:nth-child(4){transform:rotateY(270deg) translateZ(220px);}
-.carousel-card:hover{transform:translateZ(250px) rotateY(0deg) scale(1.05);box-shadow:0 0 25px #0ff;}
+/* IMAGE WRAP */
+.image-wrap{
+padding: 10px;
+border-radius: 70px;
+overflow: hidden;
+}
 
-/* ===== CONTACT FORM ===== */
-.contact-section{display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;color:white;}
-.contact-form input,.contact-form textarea{background:rgba(255,255,255,0.05);width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:2px solid #00ffff;color:white;}
-.contact-form button{background:#ee69;color:#121212;padding:10px;border:none;border-radius :10px;cursor:pointer;transition:0.3s;}
-.contact-form button:hover{box-shadow:0 0 12px #ff0000;transform:translateY(-3px);}
+/* IMAGE BOX */
+.about-img-placeholder{
+background: #4d0040;
+background-size: cover;
+padding: 10px;
+border-radius: 80px;
+}
 
-/* ===== SOCIAL ICONS ===== */
-.social-icons{text-align:center;margin-top:20px;}
-.social-icons a{background:#4d0040;color:white;padding:12px 18px;border-radius:25px;text-decoration:none;margin:6px;display:inline-block;transition:0.3s;font-weight:bold;}
-.social-icons a:hover{background:#93016a;transform:translateY(-5px);box-shadow:0 0 12px #0ff;}
-.dark .social-icons a{background:#1e1e1e;color:#0ff;border:1px solid #0ff;}
+.about-img-placeholder img{
 
-/* ===== FOOTER ===== */
-footer{background:#111;color:white;padding:20px;text-align:center;margin-top:80px; }
+width: 90%;
+max-width: 280px;
+border-radius: 60px;
+}
 
-/* ===== CURSOR ===== */
-.cursor{width:15px;height:15px;border:2px solid #0ff;border-radius:50%;position:absolute;pointer-events:none;mix-blend-mode:difference;transition:transform 0.1s linear;}
-#particles-js{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:#121212;}
+/* RIGHT */
+.about-right{
+display:inline-block ;
+}
 
-/* ===== SCROLL TO TOP ===== */
-#scrollTopBtn{position: fixed; bottom: 40px; right: 40px; background:#00f; border:none; padding:10px 15px; border-radius:50%; cursor:pointer; display:none; font-weight:bold; z-index:999;}
-#scrollTopBtn:hover{box-shadow:0 0 12px #0ff; transform:translateY(-3px);}
+.about-right h5{
+color: #ff8800;
+margin-bottom: 10px;
+}
 
-/* ===== MEDIA ===== */
+.about-right h2{
+font-size: 18px;
+margin-bottom: 15px;
+
+}
+
+.about-right p{
+color: #ccc;
+line-height: 1.6;
+}
+
+ .tools-section{
+padding: 60px 20px;
+text-align: center;
+}
+
+.tools-section h5{
+color: #ff8800;
+margin-bottom: 10px;
+}
+
+.tools-section h3{
+margin-bottom: 30px;
+}
+
+/* SCROLL */
+.tools-scroll{
+display: flex;
+justify-content: center;
+text-align: center;
+gap: 10px;
+overflow-x: auto;
+padding-bottom: 10px;
+}
+
+/* HIDE SCROLL BAR */
+.tools-scroll::-webkit-scrollbar{
+display: none;
+}
+
+/* BOX */
+.tools-box{
+min-width: 110px;
+padding: 10px;
+
+
+}
+
+/* CARD */
+.scroll-card{
+
+padding: 10px;
+border-radius: 15px;
+text-align: center;
+
+}
+
+.scroll-card img{
+width: 35px;
+margin-bottom: 10px;
+
+}
+
+.scroll-card strong{
+display: block;
+color: #ff8800;
+margin-bottom: 5px;
+}
+
+.tools-name{
+color: #fff;
+font-size: 24px;
+}
+
+/* CONTACT */
+.contact-section {display:flex; flex-wrap:wrap; justify-content:space-between; text-align: center; max-width: 600px;  gap:20px; margin:30px auto; padding: 20px;}
+.contact-section form input,
+.contact-section form textarea {
+  width:100%; padding:10px; margin-bottom:10px;
+  border-radius:8px; border:2px solid #ff8800; background:#1e293b; color:whitesmoke;
+}
+.contact-section form button {
+  padding:10px 15px; border:none; border-radius:8px;
+  background:#4d0040; color:#fff; font-weight:bold; cursor:pointer;
+}
+.social-icons{
+text-align:center;
+margin-top:20px;
+}
+
+.social-icons a{
+display:inline-block;
+margin:5px;
+font-size:32px;
+padding:10px;
+transition:0.3s;
+}
+
+footer{
+margin: 30px;
+text-align: center;
+position: relative;
+}
+
+/* MEDIA */
 @media (max-width:678px){
-nav{display:flex;flex-direction:column;background:#111;width:100%;position:absolute;top:80px;left:0;padding:15px 0;transform:translateY(-120%);opacity:0;pointer-events:none;}
-nav a{display:block;margin:12px 0;font-size:18px;}
+  header {flex-direction:column;}
+  .services {grid-template-columns:1fr;}
+  .project-container {grid-template-columns:1fr;}
+
+.about-section{
+  flex-direction: column;
+  text-align: center;
 }
+
+
+  /* SHOW MENU BUTTON */
+  .menu-btn {
+    display: block;
+  }
+
+  /* HIDE NAV */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+    /* animation */
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 999;
+  }
+
+  /* SHOW NAV WHEN CHECKED */
+  #menu-toggle:checked ~ .nav {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  
+  }
+
+  .nav a {
+    display: block;
+    margin: 4px 0;
+    font-size: 24px;
+    transition: 0.4s;
+  }
+  .logo{
+   left: 10px;right: 0;
+  }
+
+  .hero{
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-title{
+    font-size: 30px;
+  }
+  .hero-right img{
+    width: 200px;
+    margin-top: 20px;
+  }
+  .hero-meta{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .hero{
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 120px 15px 40px;
+  }
+
+  .hero-title{
+    font-size: 26px;
+  }
+
+  .hero-img-placeholder img{
+    max-width: 200px;
+  }
+
+  .hero-meta{
+    justify-content: center;
+  }
+  .tools-section{
+    padding: 20px 10px;
+  }
+
+  .tools-section h3{
+    font-size: 14px;
+  }
+
+  .tools-scroll{
+    gap: 8px;
+    padding-bottom: 10px;
+
+    /* smooth scroll 🔥 */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tools-box{
+    min-width: 70px;
+    flex: 0 0 auto;
+
+    /* snap each card */
+    scroll-snap-align: center;
+  }
+
+  .scroll-card{
+    padding: 10px;
+  }
+
+  .scroll-card img{
+    width: 40px;
+  }
+
+  .scroll-card strong{
+    font-size: 16px;
+  }
+
+  .tools-name{
+    font-size: 12px;
+  }
+}
+
 </style>
 </head>
 <body>
 
-<canvas id="canvas"></canvas>
-<div id="particles-js"></div>
-<div id="loader"><div class="spinner"></div></div>
-
 <header>
-  <img src="images/logo.png" class="logo" alt="Logo">
-  <div>
-    <div class="header-title">Jafer Media</div>
-    <p class="tagline">We create logos, posters, websites, and social media designs.</p>
-  </div>
-  <div class="header-controls">
-    <button class="dark-mode-btn" onclick="toggleMode()">Dark Mode</button>
-    <div class="menu-btn">☰</div>
-  </div>
+  <img src="images/logo.png" alt="Logo" class="logo">
+
+  <input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-btn">
+  <i class="fa-solid fa-bars menu-open"></i>
+  <i class="fa-solid fa-xmark menu-close" ></i>
+</label>
+
+<nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
+ <section class="hero">
 
-<nav id="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- LEFT -->
+  <div class="hero-left">
 
+    <div class="hero-pill">👋 Welcome</div>
+
+    <h1 class="hero-title">
+      I'm <span>Jafer Abdella</span>
+    </h1>
+
+    <p>
+      ⭐️ I am a passionate web developer.  
+      I create modern and responsive websites.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#" class="btn">Hire Me</a>
+      <a href="#" class="btn outline"> Get My CV</a>
+    </div>
+
+    <!-- META -->
+    <div class="hero-meta">
+      <div class="meta-box">
+        <strong>0+</strong>
+        <span>Years Experience</span>
+      </div>
+
+      <div class="meta-box">
+        <strong>1+</strong>
+        <span>Projects Completed</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-img-placeholder">
+        <img src="images/myphoto.jpg" alt="Profile">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="home">
+<!-- HORIZONTAL SCROLL -->
 <div class="horizontal-scroll">
   <div class="scroll-content">
-    <span>⭐ Welcome to Jafer Media</span>
-    <span>⭐ Graphic Design</span>
-    <span>⭐ Website Development</span>
-    <span>⭐ Logo & Poster Design</span>
-    <span>⭐ Social Media Content</span>
-  </div>
+  <span> ⭐ Welcome to Jafer Media</span>
+<span>⭐ Graphic Design</span>
+ <span>⭐ Website Development</span>
+ <span>⭐ Logo & Poster Design</span>
+  <span>⭐ Social Media Content</span>
+  
+  <span> ⭐ Welcome to Jafer Media</span>
+<span>⭐ Graphic Design</span>
+ <span>⭐ Website Development</span>
+ <span>⭐ Logo & Poster Design</span>
+  <span>⭐ Social Media Content</span>
 </div>
-
-<section class="section" id="home">
-  <img src="images/myphoto.jpg" class="profile-photo" alt="Profile Photo">
+</div>
+ 
 </section>
-
-<section class="section" id="about">
-  <h2>About Me</h2>
-  <p>I am Jafer Abdella, graphic designer and web developer.</p>
-</section>
-
-<section class="section" id="services">
+  <div class="contact">
+<h1>Contact Me</h1>
+<h2> Let's Work Together!</h2>
+<p>Email: jaferabdella674@gmail.com</p>
+<p>Phone: +252 63 721 9188</p>
+<p>Location: Hargeisa, Somaliland</p>
+</div>
+<section id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card glass">Logo Design<div class="card-preview">Preview: Logo Design</div></div>
-    <div class="card glass">Photo Editing<div class="card-preview">Preview: Photo Editing</div></div>
-    <div class="card glass">Website Design<div class="card-preview">Preview: Website Design</div></div>
-    <div class="card glass">Social Media Content<div class="card-preview">Preview: Social Media Content</div></div>
+    <div class="card">Logo Design</div>
+    <div class="card">Photo Editing</div>
+    <div class="card">Website Design</div>
+    <div class="card">Social Media Content</div>
   </div>
-  <h2>My Works</h2>
-  <div class="carousel-wrapper">
-    <div class="carousel">
-      <div class="carousel-card">Logo Design</div>
-      <div class="carousel-card">Poster Design</div>
-      <div class="carousel-card">Website Design</div>
-      <div class="carousel-card">Social Media</div>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="project-container">
+    <div class="project-card">
+      <img src="images/project1.jpg" alt="Project 1">
+      <h3>Portfolio Website</h3>
+      <p>HTML, CSS & JS - Clean responsive design</p>
+    </div>
+    <div class="project-card">
+      <img src="images/project2.jpg" alt="Project 2">
+      <h3>Business Landing Page</h3>
+      <p>Responsive & modern UI</p>
+    </div>
+    <div class="project-card">
+      <img src="images/project3.jpg" alt="Project 3">
+      <h3>Social Media Platform</h3>
+      <p>Creative UI concept & smooth interactions</p>
     </div>
   </div>
 </section>
+<section class="about-section">
 
-<section class="section" id="contact">
+  <!-- LEFT -->
+  <div class="about-left">
+
+    <div class="image-wrap">
+      <div class="about-img-placeholder">
+        <img src="images/myphoto.jpg" alt="Jafer Photo">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="about-right">
+
+    <h5>About</h5>
+    <h2>Who is Jafer Abdella?</h2>
+
+    <p>
+      Hi! I am Jafer Abdella, a creative graphic designer and web developer based in Hargeisa, Somaliland. 
+      I specialize in logo design, website development, and social media content creation. 
+      I love turning ideas into beautiful digital experiences.
+    </p>
+
+  </div>
+
+</section>
+  <section class="tools-section">
+  
+    <h5>My Favorite Tools</h5>
+    <h3>Explore the Tools Behind My Skills</h3>
+  
+    <div class="tools-scroll">
+  
+      <!-- HTML -->
+      <div class="tools-box">
+        <div class="scroll-card">
+          <img src="images/HTML.jpg" alt="HTML">
+          <strong>85%</strong>
+          <p class="tools-name">HTML</p>
+        </div>
+      </div>
+  
+      <!-- CSS -->
+      <div class="tools-box">
+        <div class="scroll-card">
+          <img src="images/css.jpg" alt="CSS">
+          <strong>80%</strong>
+          <p class="tools-name">CSS</p>
+        </div>
+      </div>
+  
+      <!-- JS -->
+      <div class="tools-box">
+        <div class="scroll-card">
+          <img src="images/javascript.jpg" alt="JavaScript">
+          <strong>70%</strong>
+          <p class="tools-name">JavaScript</p>
+        </div>
+      </div>
+  
+      <!-- REACT -->
+      <div class="tools-box">
+        <div class="scroll-card">
+          <img src="images/gitHub.jpg" alt="gitHub">
+          <strong>75%</strong>
+          <p class="tools-name">gitHub</p>
+        </div>
+      </div>
+  
+    </div>
+  
+  </section>
+</section>
+<section id="contact">
+  <h2>Contact Me</h2>
   <div class="contact-section">
     <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
       <input type="hidden" name="access_key" value="a98cbf53-9bd2-4c3d-bf04-a950b5ef41ab">
@@ -193,123 +721,36 @@ nav a{display:block;margin:12px 0;font-size:18px;}
       <textarea name="message" placeholder="Your Message"></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <div>
-      <h2>Contact Me</h2>
-      <p>Email: Jaferabdella674@gmail.com</p>
-      <p>Phone: +252 63 721 9188</p>
-      <p>Location: Hargeisa, Somaliland.</p>
-    </div>
   </div>
-
+ 
   <div class="social-icons">
-    <a href="https://www.facebook.com/jafer.abdella90" target="_blank">Facebook</a>
-    <a href="https://t.me/jaferabdella" target="_blank">Telegram</a>
-    <a href="mailto:jaferabdella674@gmail.com" target="_blank">Email</a>
-    <a href="https://wa.me/+252637219188" target="_blank">WhatsApp</a>
-  </div>
+
+    <a href="https://facebook.com" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+    </a>
+    
+    <a href="https://t.me/jaferabdella" target="_blank">
+    <i class="fab fa-telegram"></i>
+    </a>
+    
+    <a href="https://wa.me/252637219188" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="mailto:jaferabdella674@gmail.com">
+    <i class="fas fa-envelope"></i>
+    </a>
+    
+    <a href="https://github.com/Jaferabdella674-eng" target="_blank">
+    <i class="fab fa-github"></i>
+    </a>
+    
+    </div>
 </section>
 
-<footer>© 2026 Jafer Abdella | All Rights Reserved</footer>
-<button id="scrollTopBtn">↑</button>
-<div class="cursor" id="cursor"></div>
+<footer>
+  © 2026 Jafer Abdella | All Rights Reserved
+</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-// Loader
-window.addEventListener('load',()=>{document.getElementById('loader').style.display='none';});
-
-// Sections fadein
-const sections=document.querySelectorAll('.section');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.2});
-sections.forEach(sec=>observer.observe(sec));
-
-// Dark mode toggle
-function toggleMode(){
-    document.body.classList.toggle('dark');
-    const btn = document.querySelector('.dark-mode-btn');
-    btn.textContent = document.body.classList.contains('dark') ? "Jafer A" : "Dark Mode";
-}
-
-// Mobile menu toggle
-const menuBtn = document.querySelector('.menu-btn');
-menuBtn.addEventListener('click', () => {document.getElementById('navbar').classList.toggle('active');});
-
-// Neon cursor
-const cursor=document.getElementById('cursor');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
-
-// Card hover previews
-const cards = document.querySelectorAll('.card');
-cards.forEach(card=>{
-    const preview = card.querySelector('.card-preview');
-    card.addEventListener('mouseenter',()=>{preview.style.opacity=1; preview.style.transform='translate(-50%,-10px)';});
-    card.addEventListener('mouseleave',()=>{preview.style.opacity=0; preview.style.transform='translate(-50%,-50px)';});
-});
-
-// 3D carousel drag + auto spin
-const carousel=document.querySelector(".carousel");
-let isDragging=false,startX,currentRotate=0,carouselSpeed=0.2;
-if(carousel){
-  carousel.addEventListener("mousedown",e=>{isDragging=true;startX=e.clientX;});
-  document.addEventListener("mouseup",()=>{isDragging=false;});
-  document.addEventListener("mousemove",e=>{
-    if(!isDragging) return;
-    let moveX=e.clientX-startX;
-    currentRotate+=moveX*0.3;
-    carousel.style.transform=`rotateY(${currentRotate}deg)`;
-    startX=e.clientX;
-  });
-  carousel.addEventListener("touchstart",e=>{startX=e.touches[0].clientX;});
-  carousel.addEventListener("touchmove",e=>{
-    let moveX=e.touches[0].clientX-startX;
-    currentRotate+=moveX*0.3;
-    carousel.style.transform=`rotateY(${currentRotate}deg)`;
-    startX=e.touches[0].clientX;
-  });
-}
-function animateCarousel(){
-    if(!isDragging){currentRotate+=carouselSpeed; carousel.style.transform=`rotateY(${currentRotate}deg)`;}
-    requestAnimationFrame(animateCarousel);
-}
-animateCarousel();
-
-// Particles background
-particlesJS("particles-js",{particles:{number:{value:60},color:{value:"#0ff"},shape:{type:"circle"},opacity:{value:0.5},size:{value:3},line_linked:{enable:true,color:"#0ff"}},interactivity:{detect_on:"canvas",events:{onhover:{enable:true,mode:"grab"}}}});
-
-// Canvas particle effect
-const canvas=document.getElementById("canvas");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let mouse={x:canvas.width/2,y:canvas.height/2};
-const particles=[];
-class Particle{
-  constructor(x,y){
-    this.x=x; this.y=y; this.size=Math.random()*5+1;
-    this.speedX=Math.random()*3-1.5; this.speedY=Math.random()*3-1.5;
-    this.color=`hsl(${Math.random()*360},100%,50%)`;
-  }
-  update(){this.x+=this.speedX; this.y+=this.speedY; this.size*=0.96;}
-  draw(){ctx.fillStyle=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill();}
-}
-window.addEventListener("mousemove",(e)=>{
-  mouse.x=e.x; mouse.y=e.y;
-  for(let i=0;i<5;i++){particles.push(new Particle(mouse.x,mouse.y));}
-});
-function animate(){
-  ctx.fillStyle="rgba(0,0,0,0.2)"; ctx.fillRect(0,0,canvas.width,canvas.height);
-  for(let i=0;i<particles.length;i++){
-    particles[i].update(); particles[i].draw();
-    if(particles[i].size<0.5){particles.splice(i,1);i--;}
-  }
-  requestAnimationFrame(animate);
-}
-animate();
-
-// Scroll-to-top button
-const scrollBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', ()=>{scrollBtn.style.display = window.scrollY>300?'block':'none';});
-scrollBtn.addEventListener('click', ()=>{window.scrollTo({top:0,behavior:'smooth'});});
-</script>
 </body>
 </html>
