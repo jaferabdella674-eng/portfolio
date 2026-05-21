@@ -519,11 +519,10 @@ body.light-mode #clock{
 
 /* TOOLS GRID */
 .tools-scroll{
-  display:flex;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
   justify-content: center;
   flex-wrap: wrap;
-
- 
   gap:25px;
 }
 
@@ -732,7 +731,7 @@ footer{
     top:0;
     left:-100%;
     display: flex;
-    width:50%;
+    width:80%;
     height:calc(100vh - 90px);
     justify-content: center;
     align-items: center;
@@ -767,14 +766,20 @@ footer{
   .project-container{
     grid-template-columns:1fr;
   }
+  .project-card img{
+    height: 150px;
+  }
   
   /* HERO */
   .hero{
     flex-direction:column-reverse;
     text-align:center;
-    padding-top:140px;
+    padding-top:120px;
+    gap: 20px;
   }
-  
+  .horizontal-scroll{
+    margin-top: -20px;
+  }
   .hero-right img{
     width: 200px;
     margin-top: 10px;
@@ -854,7 +859,7 @@ footer{
   </label>
 
   <nav class="nav">
-    <a href="#">Home</a>
+    <a href="index.html">Home</a>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
