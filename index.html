@@ -23,6 +23,7 @@ body{
   color:white;
   line-height:1.6;
   overflow-x:hidden;
+  width: 100%;
 }
 
 /* ================= HEADER ================= */
@@ -232,6 +233,7 @@ background-color: #b30081;
 
 .hero-img-placeholder img{
   width: 100%;
+  height: auto;
  max-width: 230px;
   border-radius:70px;
   
@@ -323,18 +325,23 @@ body.light-mode #clock{
   background:#4d0040;
   overflow:hidden;
   white-space:nowrap;
-  padding:18px 0;
+  padding:15px;
   border-top:3px solid #93016A;
   border-bottom:3px solid #93016A;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 100px;
 }
-
+.horizontal-scroll{
+  transform: translateY(-60px);
+}
 .scroll-content{
   display:inline-block;
   animation:scroll-left 18s linear infinite;
 }
 
 .scroll-content span{
-  margin:0 25px;
+  margin:0 20px;
   font-weight:bold;
 }
 
@@ -346,6 +353,12 @@ body.light-mode #clock{
   100%{
     transform:translateX(-50%);
   }
+ 
+}
+.scroll-items{
+  flex:0 0 auto;
+  padding: 15px  20px;
+
 }
 
 /* ================= CONTACT SHORT ================= */
@@ -353,7 +366,9 @@ body.light-mode #clock{
   text-align:center;
   padding:70px 20px 30px;
 }
-
+.contact{
+  transform: translateY(-70px);
+}
 .contact h1{
   margin-bottom:10px;
 }
@@ -504,8 +519,11 @@ body.light-mode #clock{
 
 /* TOOLS GRID */
 .tools-scroll{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+ 
   gap:25px;
 }
 
@@ -706,32 +724,45 @@ footer{
   .menu-btn{
     display:block;
   }
-
+  .header{
+    flex-direction: column;
+  }
   .nav{
-    position:absolute;
-    top:70px;
-    right:-100%;
-    
-    width:60%;
+    position:fixed;
+    top:0;
+    left:-100%;
+    display: flex;
+    width:50%;
     height:calc(100vh - 90px);
-
+    justify-content: center;
+    align-items: center;
     background:#111;
 
     flex-direction:column;
     
     gap:20px;
 
+    transform:translateY(-100%);
+    opacity: 0;
+    z-index: 1;
     transition:0.3s;
   }
 
   #menu-toggle:checked ~ .nav{
-    right:0;
-    padding-top: 20px;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    left:0;
+  
   }
 
   .nav a{
-    font-size:18px;
+    font-size:24px;
+    display: block;
+    margin: 4px 0;
+    transition: 0.3s;
   }
+
   /* PROJECT */
   .project-container{
     grid-template-columns:1fr;
@@ -770,11 +801,11 @@ footer{
 
   /* ABOUT */
   .about-section{
-    text-align:center;
+    
     flex-direction: column;
     text-align: center;
   
-    padding: 20px;
+    
   }
 
   .about-right h2{
@@ -783,9 +814,15 @@ footer{
 
   /* TOOLS */
   .tools-scroll{
+    display: grid;
     grid-template-columns:repeat(2,1fr);
+    gap: 10px;
+    width: 100%;
   }
-
+  .tools-box{
+    min-width: 0;
+    width: 100%;
+  }
   /* SERVICES */
   .services-services-container{
     grid-template-columns:1fr;
@@ -846,7 +883,7 @@ footer{
     </h1>
 
     <p>
-      Passionate web developer and graphic designer creating modern,
+     A passionate web developer and graphic designer creating modern,
       responsive and creative digital experiences.
     </p>
 
